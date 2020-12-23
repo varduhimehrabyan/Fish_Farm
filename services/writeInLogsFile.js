@@ -26,6 +26,6 @@ function writeInLogs(message) {
     } 
 }) 
 }
-writeInLogs("error")
+//writeInLogs("error")
 
 module.exports = writeInLogs;

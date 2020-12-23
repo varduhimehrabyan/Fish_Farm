@@ -4,14 +4,17 @@ const request = require('request')
 const router = express()
 router.use(express.json())
 
-const captchaSecretKey = process.env.CAPTCHA_SECRET_KEY
+//const secretKey = process.env.CAPTCHA_SECRET_KEY
+const secretKey = '6LecLQoaAAAAAKmMUxi8oCHUsUZnaSSzx32gr3lt'
+
+console.log(secretKey);
 
 const captcha = (req, res, next) => {
 
     if (!req.body.captcha) {
-        res.json({ "success": false, "msg": "Capctha is not checked" })
+        res.json({ "success": false, "msg": "Cartcha token is undefined!" })
     } else {
-        const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${captchaSecretKey}&response=${req.body.captcha}`
+        const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}`
         request(verifyUrl, (err, body) => {
             if (err) {
             } else {
@@ -20,9 +23,10 @@ const captcha = (req, res, next) => {
                     res.json({ "success": false, "msg": "captcha verification failed" })
                 }
                 else if (body.score < 0.5) {
-                    res.json({ "success": false, "msg": "you might be a bot, sorry!", "score": body.score });
+                    res.json({ "success": false, "msg": "You might be a robot, sorry! You are banned!", "score": body.score });
                 } else {
                     next()
+                    res.json({'msg': 'You have been verified!'})
                 }
             }
         })
@@ -31,8 +35,6 @@ const captcha = (req, res, next) => {
 
 
 module.exports = captcha
-
-
 
 
 // const request = require('request');
