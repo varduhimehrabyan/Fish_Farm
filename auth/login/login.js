@@ -27,6 +27,7 @@ router.post('/login', async (req, res) => {
                 else {
                     createToken(res, mail, result.rows[0].id, result.rows[0].typeId)
                     console.log('User logged in!')
+                    writeInLogs("login")
                     console.log("success: ", result.rows[0].success);
                     //console.log("type: ", typeof(result.rows[0].success));
                     res.send({success: true,
@@ -37,6 +38,7 @@ router.post('/login', async (req, res) => {
 
     } 
     catch(err) {
+        writeInLogs(err)
         res.send({success: false,
         error: 'Mail not found!!'})
     }

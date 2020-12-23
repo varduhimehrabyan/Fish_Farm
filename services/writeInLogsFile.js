@@ -18,11 +18,13 @@ function writeInLogs(message) {
         const hour = date.getHours();
         const minute = date.getMinutes();
 
-        const errorText = `${month}/${day}/${year} ${hour}:${minute} \nError: ${message}`
+        const errorText = `       ${month}/${day}/${year} ${hour}:${minute} \nError: ${message} \n`
 
         console.log(errorText);
         
-        fs.writeFileSync( '../logs.txt', errorText ) 
+        fs.appendFile("./logs.txt", errorText , function (err) {
+            if (err) console.log(err);
+        })
     } 
 }) 
 }

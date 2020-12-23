@@ -7,10 +7,10 @@ router.use(express.json());
 
 router.get('/getPools', async (req, res) => {
     console.log("getpools");
-    const allPools = await pool.query(pgFunctions.usp_getpools)
-    console.log(allPools),
+    const allPools = await pool.query(pgFunctions.usp_getPools)
+    console.log(allPools.rows),
     res.status(200).send({
-        allPools: allPools
+        allPools: allPools.rows
     })
     
 })
