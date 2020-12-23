@@ -1,0 +1,31 @@
+const fs = require('file-system');
+
+
+function writeInLogs(message) {
+  fs.open('../logs.txt', 'a', (err, fd) => {
+    if(err) { 
+        console.log('Cant open file'); 
+    } else { 
+        
+        const date = new Date();
+        const time = date.getTime();
+        const year = date.getFullYear();
+        const month = date.getMonth()+1; 
+        if(month.toString().length == 1) {
+            let month = '0'+ month;
+        }
+        const day = date.getDate();
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+
+        const errorText = `${month}/${day}/${year} ${hour}:${minute} \nError: ${message}`
+
+        console.log(errorText);
+        
+        fs.writeFileSync( '../logs.txt', errorText ) 
+    } 
+}) 
+}
+writeInLogs("error")
+
+module.exports = writeInLogs;
