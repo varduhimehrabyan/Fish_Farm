@@ -8,7 +8,7 @@ router.use(express.json());
 router.post('/addPool', async (req, res) => {
     console.log("addpool");
     const { name, height, width, maxweight } = req.body;
-    await pool.query(pgFunctions.usp_addPool, [name, height, width, maxweight]).then(
+    await pool.query(pgFunctions.pool.usp_addPool, [name, height, width, maxweight]).then(
         res.status(200).send({ success: true})
     ) .catch (err => {
         console.log(err);
