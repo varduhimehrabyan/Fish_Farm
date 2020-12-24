@@ -5,10 +5,10 @@ const pgFunctions = require('../pgFunctions');
 
 router.use(express.json());
 
-router.post('/deletePool', async (req, res) => {
+router.post('/deletePool/:id', async (req, res) => {
     console.log("deletepool");
-    const { id } = req.body;
-    await pool.query(pgFunctions.pool.usp_deletePool, [id]).then(
+    //const { id } = req.params;
+    await pool.query(pgFunctions.pool.usp_deletePool, [req.params.id]).then(
         res.status(200).send({ success: true})
     ) .catch (err => {
         console.log(err);
