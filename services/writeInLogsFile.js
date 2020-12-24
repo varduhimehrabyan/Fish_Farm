@@ -17,8 +17,11 @@ function writeInLogs(message) {
         const day = date.getDate();
         const hour = date.getHours();
         const minute = date.getMinutes();
+        if(minute.toString().length == 1) {
+            let minute = '0'+ minute;
+        }
 
-        const errorText = `       ${month}/${day}/${year} ${hour}:${minute} \nError: ${message} \n`
+        const errorText = `${month}/${day}/${year} ${hour}:${minute} \n   Message: ${message} \n`
 
         console.log(errorText);
         

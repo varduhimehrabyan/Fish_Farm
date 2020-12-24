@@ -3,6 +3,8 @@ const router = express();
 
 router.use('/', require('./login'));
 router.use('/', require('./logout'));
+router.use('/', require('./sendMail'));
+
 
 module.exports = router;
 

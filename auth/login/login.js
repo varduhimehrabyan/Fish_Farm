@@ -11,8 +11,9 @@ router.use(express.json());
 router.post('/login', async (req, res) => {
     try {
         const { mail, password } = req.body
-            const result = await pool.query(pgFunctions.usp_login, [`${mail}`])
-            console.log(result);
+       
+            const result = await pool.query(pgFunctions.auth.usp_login, [`${mail}`])
+            console.log('result');
             if(result.rowCount == 0) {
                 console.log('Mail not found!');
                 res.send({success: false})
@@ -25,9 +26,8 @@ router.post('/login', async (req, res) => {
                     res.send({ success: false})
                 } 
                 else {
-                    createToken(res, mail, result.rows[0].id, result.rows[0].typeId)
-                    console.log('User logged in!')
-                    writeInLogs("login")
+                    createToken(res, mail, result.rows[0].id, result.rows[0].typeId);
+                    console.log('User logged in!');
                     console.log("success: ", result.rows[0].success);
                     //console.log("type: ", typeof(result.rows[0].success));
                     res.send({success: true,
@@ -38,7 +38,8 @@ router.post('/login', async (req, res) => {
 
     } 
     catch(err) {
-        writeInLogs(err)
+        console.log('catch');
+        writeInLogs(err.message);
         res.send({success: false,
         error: 'Mail not found!!'})
     }

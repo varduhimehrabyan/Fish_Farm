@@ -5,7 +5,7 @@ module.exports = {
         usp_login: 'SELECT * FROM usp_login($1)',
     },
     pool: {
-        usp_getPools: 'SELECT * FROM "usp_getPools"()',
+        usp_getPoolsAndDetails: 'SELECT * FROM "usp_getPoolsAndDetails"()',
         usp_addPool: 'SELECT * FROM "usp_addPool"($1, $2, $3, $4)',
         usp_deletePool: 'SELECT * FROM "usp_deletePool"($1)',
         usp_updatePool: 'SELECT * FROM "usp_updatePool"($1, $2, $3, $4, $5)',

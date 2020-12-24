@@ -4,7 +4,7 @@ const router = express();
 router.use('/', require('./addPool'));
 router.use('/', require('./deletePool'));
 router.use('/', require('./updatePool'));
-router.use('/', require('./getPools'));
+router.use('/', require('./getPoolsAndDetails'));
 
 
 module.exports = router;
