@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const writeInLogs = require('../../services/writeInLogsFile');
 
 const router = express();
 
@@ -12,7 +13,7 @@ const htmlForm = `<div style="font - family: verdana; max-width:500px; margin-le
                 </div>`
 
 router.post('/sendMail', async (req, res) => {
-    
+  try {
     const { mail } = req.body
     // create reusable transporter object using the default SMTP transport
     let transporter = await nodemailer.createTransport({
@@ -39,7 +40,12 @@ router.post('/sendMail', async (req, res) => {
             res.send('Mail sent!')
         }
     });
-
+  }  
+  catch(err) {
+    writeInLogs(err.message);
+    res.send({success: false})
+}
+    
 })
 
 module.exports = router

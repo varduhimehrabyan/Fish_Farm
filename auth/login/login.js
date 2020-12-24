@@ -38,10 +38,8 @@ router.post('/login', async (req, res) => {
 
     } 
     catch(err) {
-        console.log('catch');
         writeInLogs(err.message);
-        res.send({success: false,
-        error: 'Mail not found!!'})
+        res.send({success: false})
     }
   
 });
