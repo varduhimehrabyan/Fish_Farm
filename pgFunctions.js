@@ -9,13 +9,18 @@ module.exports = {
         usp_addPool: 'SELECT * FROM "usp_addPool"($1, $2, $3, $4)',
         usp_deletePool: 'SELECT * FROM "usp_deletePool"($1)',
         usp_updatePool: 'SELECT * FROM "usp_updatePool"($1, $2, $3, $4, $5)',
+        usp_getPools: 'SELECT * FROM "usp_getPools"()',
 
         sale: {
             usp_fishOut: 'SELECT * FROM "usp_fishOut"($1, $2, $3, $4, $5, $6)',
         },
         movement: {
             usp_fishMove: 'SELECT * FROM "usp_fishMove"($1, $2, $3, $4, $5, $6)',
+        },
+        entrance: {
+            usp_fishIn: 'SELECT * FROM "usp_fishIn"($1, $2, $3, $4, $5, $6)',
         }
+
     },
     fish: {
         usp_getFishes: 'SELECT * FROM "usp_getFishes"()',

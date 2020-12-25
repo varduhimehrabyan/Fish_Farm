@@ -1,2 +1,20 @@
-12/24/2020 10:14 
-   Error: User logged in! 
+12/25/2020  17:20 
+  error: invalid input syntax for integer: "" 
+12/25/2020  17:21 
+  error: invalid input syntax for integer: "" 
+12/25/2020  17:26 
+  error: invalid input syntax for integer: "" 
+12/25/2020  17:27 
+  error: invalid input syntax for integer: "" 
+12/25/2020  17:28 
+  error: invalid input syntax for integer: "" 
+12/25/2020  17:30 
+  error: invalid input syntax for integer: "" 
+12/25/2020  17:38 
+  error: invalid input syntax for integer: "" 
+12/25/2020  17:39 
+  error: invalid input syntax for integer: "" 
+12/25/2020  17:42 
+  error: invalid input syntax for integer: "" 
+12/25/2020  17:48 
+  error: invalid input syntax for integer: "" 

@@ -2,7 +2,7 @@ const pgFunctions = require('../../pgFunctions');
 const express = require('express');
 const pool = require('../../database/db')
 const router = express();
-const writeInLogs = require('../services/writeInLogsFile');
+const writeInLogs = require('../../services/writeInLogsFile');
 
 
 router.use(express.json());

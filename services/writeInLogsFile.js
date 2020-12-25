@@ -11,20 +11,20 @@ function writeInLogs(message) {
                 const date = new Date();
                 const time = date.getTime();
                 const year = date.getFullYear();
-                const month = date.getMonth()+1; 
+                let month = date.getMonth()+1; 
                 if(month.toString().length == 1) {
-                    let month = '0'+ month;
+                    month = '0'+ month;
                 }
                 const day = date.getDate();
                 const hour = date.getHours();
-                const minute = date.getMinutes();
+                let minute = date.getMinutes();
                 if(minute.toString().length == 1) {
-                    let minute = '0'+ minute;
+                    minute = '0'+ minute;
                 }
         
-                const errorText = `${month}/${day}/${year} ${hour}:${minute} \n   Message: ${message} \n`
+                const errorText = `${month}/${day}/${year}  ${hour}:${minute} \n  ${message} \n`
         
-                console.log(errorText);
+                //console.log(errorText);
                 
                 fs.appendFile("./logs.txt", errorText , function (err) {
                     if (err) console.log(err);

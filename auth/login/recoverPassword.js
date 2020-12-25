@@ -34,18 +34,5 @@
 //     }
 // });
 
-// const createToken = function(res, mail) {
-//     try {
-//         const token = jwt.sign({ mail: mail }, secret);
-//         console.log("token: ", token)
-//          res.cookie('token', token, {
-//             httpOnly: true,
-//             });
-//     } catch(err) {
-//         console.log('errr')
-//         console.log(err);
-//     }
-// }
-
 
 // module.exports = router;

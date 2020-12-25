@@ -10,11 +10,12 @@ router.use(express.json());
 router.get('/getPartners', async (req, res) => {
     try {
         console.log("getPartners");
-        const allFoods = await pool.query(pgFunctions.partner.usp_getPartners)
-        console.log(allFoods.rows),
-        res.status(200).send({
-            allFoods: allFoods.rows
-        })
+        const allPartners = await pool.query(pgFunctions.partner.usp_getPartners)
+            console.log(allPartners.rows),
+            res.status(200).send({
+                allPartners: allPartners.rows
+            })
+        
     }
     catch(err)  {
         writeInLogs(err);
