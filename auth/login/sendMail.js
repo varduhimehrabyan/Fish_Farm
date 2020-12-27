@@ -8,7 +8,8 @@ router.use(bodyParser.urlencoded({ extended: false}));
 router.use(express.json())
 
 router.post('/sendMail', async (req, res) => {
-  sendMail();
+  const { mail } = req.body
+  sendMail(mail);
 })
 
 module.exports = router

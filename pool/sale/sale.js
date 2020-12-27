@@ -7,10 +7,9 @@ const writeInLogs = require('../../services/writeInLogsFile');
 
 router.use(express.json());
 
-router.post('/sales/:id', async (req, res) => {
+router.post('/sales', async (req, res) => {
     try {
-        const id = req.params.id;
-        const { quantity, weight, avgWeight, partnerId, description } = req.body;
+        const { id, quantity, weight, avgWeight, partnerId, description } = req.body;
         const result = await pool.query(pgFunctions.pool.sale.usp_fishOut, [id, quantity, weight, avgWeight, partnerId, description]);
         console.log(result);
         res.send({success: result.success});

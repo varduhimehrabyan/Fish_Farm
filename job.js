@@ -4,13 +4,15 @@ const pgFunctions = require('./pgFunctions');
 const writeInLogs = require('./services/writeInLogsFile');
 const fetch = require('node-fetch');
 const request = require('request');
+const sendMail = require('./services/sendMail');
 //let shell = require('shelljs');
 
-cron.schedule('0 26 16 * * *', async () => {
+cron.schedule('0 00 15 * * *', async () => {
     try {
-        console.log('Schedule running');
+sendMail('zhorlev94@gmail.com');  
+sendMail('varduhimehrabyan99@gmail.com');   
+console.log("Schedule running!");
 
-        
         // const result = await pool.query(pgFunctions.pool.usp_getPoolsAndDetails)
         //     writeInLogs(result);
         //     console.log(result);

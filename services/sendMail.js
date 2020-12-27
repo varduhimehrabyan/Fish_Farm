@@ -12,9 +12,9 @@ const htmlForm = `<div style="font - family: verdana; max-width:500px; margin-le
                     <p style="color:blue"><i>Here must be Verification URL</i></p>
                 </div>`
 
-const sendMail = async () =>  {
+const sendMail = async (mail) =>  {
     try {
-        const { mail } = req.body
+        
         // create reusable transporter object using the default SMTP transport
         let transporter = await nodemailer.createTransport({
           service: "gmail",
