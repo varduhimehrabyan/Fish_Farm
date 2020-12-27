@@ -7,7 +7,7 @@ router.use('/', require('./updatePool'));
 router.use('/', require('./getPoolsAndDetails'));
 router.use('/', require('./sale'));
 router.use('/', require('./movement'));
-router.use('/', require('./entrance'));
+router.use('/', require('./inPool'));
 router.use('/', require('./getPoolsAndDetails'));
 
 

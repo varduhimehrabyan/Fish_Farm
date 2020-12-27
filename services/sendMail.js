@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-const writeInLogs = require('../../services/writeInLogsFile');
+const writeInLogs = require('../services/writeInLogsFile');
 
 const router = express();
 
@@ -12,7 +12,7 @@ const htmlForm = `<div style="font - family: verdana; max-width:500px; margin-le
                     <p style="color:blue"><i>Here must be Verification URL</i></p>
                 </div>`
 
-function sendMail() {
+const sendMail = async () =>  {
     try {
         const { mail } = req.body
         // create reusable transporter object using the default SMTP transport
