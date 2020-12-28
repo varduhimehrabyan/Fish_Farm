@@ -30,9 +30,9 @@ module.exports = {
     },
     food: {
         usp_getFoods: 'SELECT * FROM "usp_getFoods"()',
-        usp_addFood: 'SELECT * FROM "usp_addFood"($1, $2, $3, $4)',
-        usp_deleteFood: 'SELECT * FROM "usp_deleteFood"($1)',
-        usp_updateFood: 'SELECT * FROM "usp_updateFood"($1, $2, $3, $4, $5)',
+        usp_addfood: 'SELECT * FROM "usp_addfood"($1, $2, $3, $4)',
+        usp_deletefood: 'SELECT * FROM "usp_deletefood"($1)',
+        usp_updatefood: 'SELECT * FROM usp_updatefood($1, $2, $3, $4, $5)',
     },
     partner: {
         usp_getPartners: 'SELECT * FROM "usp_getPartners"()',
