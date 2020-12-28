@@ -22,3 +22,25 @@
   error: invalid input syntax for integer: "" 
 12/28/2020  11:56 
   error: function usp_updateFood(unknown, unknown, unknown, unknown, unknown) does not exist 
+12/28/2020  17:11 
+  ReferenceError: Cannot access 'add' before initialization 
+12/28/2020  17:12 
+  ReferenceError: Cannot access 'add' before initialization 
+12/28/2020  17:15 
+  ReferenceError: Cannot access 'add' before initialization 
+12/28/2020  17:16 
+  ReferenceError: Cannot access 'add' before initialization 
+12/28/2020  17:19 
+  error: function usp_addfood(unknown, unknown, unknown, unknown) does not exist 
+12/28/2020  17:22 
+  error: function usp_addfood(unknown, unknown, unknown, unknown) does not exist 
+12/28/2020  17:29 
+  ReferenceError: Cannot access 'add' before initialization 
+12/28/2020  17:29 
+  error: function usp_addfood(unknown, unknown, unknown, unknown) does not exist 
+12/28/2020  17:32 
+  ReferenceError: Cannot access 'add' before initialization 
+12/28/2020  17:33 
+  ReferenceError: success is not defined 
+12/28/2020  17:34 
+  ReferenceError: success is not defined 
