@@ -8,5 +8,3 @@ router.use('/', require('./partner'));
 
 
 module.exports = router;
-
-

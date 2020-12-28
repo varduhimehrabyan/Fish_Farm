@@ -7,7 +7,7 @@ const writeInLogs = require('../services/writeInLogsFile');
 
 router.use(express.json());
 
-router.put('/updatePool', async (req, res) => {
+router.post('/updatePool', async (req, res) => {
     try {
         console.log("updatepools");
         const { id, name, height, width, maxweight } = req.body;

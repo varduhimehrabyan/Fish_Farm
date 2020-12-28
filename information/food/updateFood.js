@@ -5,7 +5,7 @@ const pgFunctions = require('../../pgFunctions');
 
 router.use(express.json());
 
-router.put('/updateFood', async (req, res) => {
+router.post('/updateFood', async (req, res) => {
     try {
         console.log("updateFood");
         const { id, name, number, weigth, coefficient } = req.body;

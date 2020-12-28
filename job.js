@@ -12,10 +12,6 @@ cron.schedule('0 00 15 * * *', async () => {
 sendMail('zhorlev94@gmail.com');  
 sendMail('varduhimehrabyan99@gmail.com');   
 console.log("Schedule running!");
-
-        // const result = await pool.query(pgFunctions.pool.usp_getPoolsAndDetails)
-        //     writeInLogs(result);
-        //     console.log(result);
         
         // if(shell.exec('dir') !== 0) {
         //     console.log('Something went wrong');
