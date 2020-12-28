@@ -8,7 +8,7 @@ const tokenVerify = async (req, res, next) => {
     try {
         if (req.headers.cookie) {
             let currentToken = req.headers.cookie.split('token=')[1]
-            jwt.verify(currentToken, process.env.secret, function (err, decoded) {
+            jwt.verify(currentToken, secret, function (err, decoded) {
                 if (err) {
                     res.send({ success: false })
                     console.log('Token not verified!');

@@ -10,8 +10,8 @@ router.use(express.json());
 router.post('/addFood', async (req, res) => {
     try {
         console.log("addfood");
-        const { name, number, weigth, coefficient } = req.body;
-        await pool.query(pgFunctions.food.usp_addFood, [name, number, weigth, coefficient]).then(
+        const { name, number, weight, coefficient } = req.body;
+        await pool.query(pgFunctions.food.usp_addFood, [name, number, weight, coefficient]).then(
             res.status(200).send({ success: true})
         ) .catch (err => {
             writeInLogs(err);

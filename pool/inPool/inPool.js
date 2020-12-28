@@ -9,7 +9,6 @@ router.use(express.json());
 
 router.post('/inPool', async (req, res) => {
     try {
-        console.log("************************************");
         const { toPoolid, quantity, weight, avgWeight, partnerId, description } = req.body;
         const result = await pool.query(pgFunctions.pool.entrance.usp_fishIn, [toPoolid, quantity, weight, avgWeight, partnerId, description])
             console.log(result);
