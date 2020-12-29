@@ -10,8 +10,8 @@ router.post('/deleteFood/:id', async (req, res) => {
     try {
         console.log("deletefood");
         const { id } = req.params;
-        await pool.query(pgFunctions.food.usp_deleteFood, [id]).then(
-            res.status(200).send({ success: true})
+        const result = await pool.query(pgFunctions.food.usp_deleteFood, [id]).then(
+            res.status(200).send({ success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})
         ) .catch (err => {
             writeInLogs(err);
             console.log(err);
