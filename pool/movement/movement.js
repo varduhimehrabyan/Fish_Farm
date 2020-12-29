@@ -9,8 +9,8 @@ router.use(express.json());
 
 router.post('/movement', async (req, res) => {
     try {
-        const { id, quantity, weight, avgWeight, partnerId, description } = req.body;
-        const result = await pool.query(pgFunctions.pool.movement.usp_fishMove, [fromPoolid, id, quantity, weight, avgWeight, partnerId, description]);
+        const { fromPoolid, quantity, weight, avgWeight, partnerId, description } = req.body;
+        const result = await pool.query(pgFunctions.pool.movement.usp_fishMove, [fromPoolid, quantity, weight, avgWeight, partnerId, description]);
         console.log(result);
         res.send({success: result.success});
     }
