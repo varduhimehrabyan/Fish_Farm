@@ -11,7 +11,7 @@ router.post('/updateFood', async (req, res) => {
         console.log("updateFood");
         const { id, name, number, weigth, coefficient } = req.body;
         const result = await pool.query(pgFunctions.food.usp_updateFood, [id, name, number, weigth, coefficient]).then(
-            res.status(200).send({ success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})
+            res.status(200).send({ success: true, errorMessage: null})
         ) .catch (err => {
             writeInLogs(err);
             console.log(err);
