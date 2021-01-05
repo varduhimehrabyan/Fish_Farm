@@ -10,16 +10,13 @@ router.post('/addPool', async (req, res) => {
     try {
         console.log("addpool");
         const { name, height, width, maxweight } = req.body;
-        await pool.query(pgFunctions.pool.usp_addPool, [name, height, width, maxweight]).then(
+        const added = await pool.query(pgFunctions.pool.usp_addPool, [name, height, width, maxweight])
+            console.log(added.rows[0].success)
             res.status(200).send({ success: added.rows[0].success, errorMessage: added.rows[0].errorMessage,id: added.rows[0].id})
-        ) .catch (err => {
-            console.log(err);
-        })
     }
     catch(err)  {
         writeInLogs(err);
     }
     
 })
-
 module.exports = router
