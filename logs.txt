@@ -1,70 +1,15 @@
-12/25/2020  17:20 
-  error: invalid input syntax for integer: "" 
-12/25/2020  17:21 
-  error: invalid input syntax for integer: "" 
-12/25/2020  17:26 
-  error: invalid input syntax for integer: "" 
-12/25/2020  17:27 
-  error: invalid input syntax for integer: "" 
-12/25/2020  17:28 
-  error: invalid input syntax for integer: "" 
-12/25/2020  17:30 
-  error: invalid input syntax for integer: "" 
-12/25/2020  17:38 
-  error: invalid input syntax for integer: "" 
-12/25/2020  17:39 
-  error: invalid input syntax for integer: "" 
-12/25/2020  17:42 
-  error: invalid input syntax for integer: "" 
-12/25/2020  17:48 
-  error: invalid input syntax for integer: "" 
-12/25/2020  18:02 
-  error: invalid input syntax for integer: "" 
-12/28/2020  11:56 
-  error: function usp_updateFood(unknown, unknown, unknown, unknown, unknown) does not exist 
-12/28/2020  17:11 
-  ReferenceError: Cannot access 'add' before initialization 
-12/28/2020  17:12 
-  ReferenceError: Cannot access 'add' before initialization 
-12/28/2020  17:15 
-  ReferenceError: Cannot access 'add' before initialization 
-12/28/2020  17:16 
-  ReferenceError: Cannot access 'add' before initialization 
-12/28/2020  17:19 
-  error: function usp_addfood(unknown, unknown, unknown, unknown) does not exist 
-12/28/2020  17:22 
-  error: function usp_addfood(unknown, unknown, unknown, unknown) does not exist 
-12/28/2020  17:29 
-  ReferenceError: Cannot access 'add' before initialization 
-12/28/2020  17:29 
-  error: function usp_addfood(unknown, unknown, unknown, unknown) does not exist 
-12/28/2020  17:32 
-  ReferenceError: Cannot access 'add' before initialization 
-12/28/2020  17:33 
-  ReferenceError: success is not defined 
-12/28/2020  17:34 
-  ReferenceError: success is not defined 
-12/28/2020  17:46 
-  ReferenceError: Cannot access 'added' before initialization 
-12/29/2020  13:35 
-  ReferenceError: Cannot access 'result' before initialization 
-12/29/2020  13:36 
-  ReferenceError: Cannot access 'result' before initialization 
-12/29/2020  13:39 
-  ReferenceError: Cannot access 'result' before initialization 
-12/29/2020  13:42 
-  ReferenceError: Cannot access 'result' before initialization 
-12/29/2020  13:43 
-  ReferenceError: Cannot access 'result' before initialization 
-12/29/2020  13:43 
-  ReferenceError: Cannot access 'result' before initialization 
-12/29/2020  15:40 
-  ReferenceError: Cannot access 'result' before initialization 
-12/29/2020  15:41 
-  ReferenceError: Cannot access 'result' before initialization 
-01/5/2021  18:52 
+01/5/2021  19:12 
+  Error: data and hash arguments required 
+
+01/5/2021  19:22 
+  Error: data and hash arguments required 
+
+01/5/2021  19:25 
+  Error: data and hash arguments required 
+
+01/5/2021  20:17 
   ReferenceError: added is not defined 
-01/5/2021  18:54 
-  ReferenceError: Cannot access 'added' before initialization 
-01/5/2021  18:54 
-  ReferenceError: Cannot access 'added' before initialization 
+
+01/5/2021  20:17 
+  ReferenceError: added is not defined 
+

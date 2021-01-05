@@ -22,7 +22,7 @@ function writeInLogs(message) {
                     minute = '0'+ minute;
                 }
         
-                const errorText = `${month}/${day}/${year}  ${hour}:${minute} \n  ${message} \n`
+                const errorText = `${month}/${day}/${year}  ${hour}:${minute} \n  ${message} \n\n`
         
                 //console.log(errorText);
                 

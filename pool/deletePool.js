@@ -10,13 +10,11 @@ router.use(express.json());
 router.post('/deletePool', async (req, res) => {
     try {
         console.log("deletepool");
-        const { id } = req.body;
-        const result = await pool.query(pgFunctions.pool.usp_deletePool, [id]).then(
+        const id = req.body.id;
+        const result = await pool.query(pgFunctions.pool.usp_deletePool, [id])
             //res.status(200).send({ success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})
-            res.send({success: true})
-        ) .catch (err => {
-            console.log(err);
-        })
+            res.status(200).send({ success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})
+        
     }
     catch(err)  {
         writeInLogs(err);
