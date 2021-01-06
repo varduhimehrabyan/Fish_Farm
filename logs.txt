@@ -13,3 +13,6 @@
 01/5/2021  20:17 
   ReferenceError: added is not defined 
 
+01/6/2021  16:01 
+  ReferenceError: Cannot access 'result' before initialization 
+

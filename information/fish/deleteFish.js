@@ -10,12 +10,10 @@ router.post('/deleteFish', async (req, res) => {
     try {
         console.log("deletefish");
         const { id } = req.body;
-        const result = await pool.query(pgFunctions.fish.usp_deleteFish, [id]).then(
-            res.status(200).send({ success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})
-        ) .catch (err => {
-            writeInLogs(err);
-            console.log(err);
-        })
+        const result = await pool.query(pgFunctions.fish.usp_deleteFish, [id])
+        res.status(200).send({ success: result.rows[0].success, 
+                            errorMessage: result.rows[0].errormessage})
+        
     } 
     catch(err) {
         writeInLogs(err);
