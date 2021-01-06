@@ -11,7 +11,7 @@ router.post('/updateFish', async (req, res) => {
         console.log("updateFish");
         const { id, name, description } = req.body;
         const result = await pool.query(pgFunctions.fish.usp_updateFish, [id, name, description])
-            res.status(200).send({ success: true, errorMessage: null})
+            res.status(200).send({ success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})
         
     }
     catch(err) {
