@@ -16,3 +16,12 @@
 01/6/2021  16:01 
   ReferenceError: Cannot access 'result' before initialization 
 
+01/6/2021  16:26 
+  error: value "12454444444" is out of range for type integer 
+
+01/6/2021  16:27 
+  error: value "12454444444" is out of range for type integer 
+
+01/6/2021  16:28 
+  error: value "1444466666666666800" is out of range for type integer 
+
