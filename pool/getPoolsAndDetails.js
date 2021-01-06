@@ -11,7 +11,6 @@ router.get('/getPoolsAndDetails', async (req, res) => {
     try {
         console.log("getPoolsAndDetails");
         const allPools = await pool.query(pgFunctions.pool.usp_getPoolsAndDetails)
-        //console.log(allPools.rows),
         res.status(200).send({
             allPools: allPools.rows
         })
