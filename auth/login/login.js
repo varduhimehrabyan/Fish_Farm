@@ -5,6 +5,7 @@ const pool = require('../../database/db');
 const createToken = require('../token/createToken');
 const pgFunctions = require('../../pgFunctions');
 const writeInLogs = require('../../services/writeInLogsFile')
+const captchaVerify = require('../../middlewares/captcha/captchaVerify')
 
 router.use(express.json());
 
@@ -13,11 +14,11 @@ router.post('/login', async (req, res) => {
         const { mail, password } = req.body
        
             const result = await pool.query(pgFunctions.auth.usp_login, [`${mail}`])
-            console.log(result);
+            console.log({success: result.rows[0].success,
+            errorMessage: result.rows[0].errorMessage});
             if(result.rowCount == 0) {
-                res.send({success: false})
+                res.send({success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})
             } else {
-                console.log("password: ", result.rows[0].password);
                 const correctPassword = await bcrypt.compare(password, result.rows[0].password)
                 if(!correctPassword) {
                     console.log('Incorrect password!')
@@ -28,6 +29,9 @@ router.post('/login', async (req, res) => {
                     console.log('User logged in!');
                     console.log("success: ", result.rows[0].success);
                     //console.log("type: ", typeof(result.rows[0].success));
+                    console.log({success: result.rows[0].success,
+                        errorMessage: result.rows[0].errorMessage,
+                        userType: `${result.rows[0].typeId}`});
                     res.send({success: result.rows[0].success,
                         errorMessage: result.rows[0].errorMessage,
                         userType: `${result.rows[0].typeId}`})

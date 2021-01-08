@@ -2,12 +2,13 @@ const express = require('express');
 const router = express();
 const cookieParser = require('cookie-parser');
 //const tokenVerify = require('../../middlewares/token/tokenVerify')
-const writeInLogs = require('../../services/writeInLogsFile')
+const writeInLogs = require('../../services/writeInLogsFile');
+const tokenVerify = require('../../middlewares/token/tokenVerify');
 
 router.use(express.json());
 router.use(cookieParser());
 
-router.post('/logout', async (req, res) => {
+router.post('/logout', tokenVerify, async (req, res) => {
     try {
         const cookie = req.cookies
         console.log(cookie);

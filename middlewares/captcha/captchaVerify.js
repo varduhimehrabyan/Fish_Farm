@@ -4,21 +4,23 @@ const request = require('request')
 const router = express()
 router.use(express.json())
 
-//const secretKey = process.env.CAPTCHA_SECRET_KEY
-const secretKey = '6LecLQoaAAAAAKmMUxi8oCHUsUZnaSSzx32gr3lt'
+const secretKey = process.env.captcha_secret_key
+//const secretKey = '6LecLQoaAAAAAD5uQQ37dD5n-xh76rhIU4HFwlMR'
 
 console.log(secretKey);
 
 const captcha = (req, res, next) => {
+    console.log(req.body.captcha);
 
     if (!req.body.captcha) {
         res.json({ "success": false, "msg": "Cartcha token is undefined!" })
     } else {
         const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}`
         request(verifyUrl, (err, body) => {
+            console.log(body.success);
             if (err) {
+                console.log(err);
             } else {
-                body = JSON.parse(body)
                 if (!body.success && body.success === undefined) {
                     res.json({ "success": false, "msg": "captcha verification failed" })
                 }

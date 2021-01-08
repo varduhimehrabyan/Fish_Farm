@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
+global.process.env = process.env
 
 app.use(express.json());
 app.use(cookieParser());

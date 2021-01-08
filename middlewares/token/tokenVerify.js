@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
-const jwt_decode = require('jwt-decode')
-const secret = '39442051e92c051c27790d9552812efc88239532';
+const jwt_decode = require('jwt-decode');
+const secret = process.env.secret
+
+console.log("secret: ", secret);
 
 
 const tokenVerify = async (req, res, next) => {
