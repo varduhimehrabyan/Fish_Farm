@@ -3,10 +3,11 @@ const router = express();
 const pool = require('../../database/db');
 const pgFunctions = require('../../pgFunctions');
 const writeInLogs = require('../../services/writeInLogsFile');
+const tokenVerify = require('../../middlewares/token/tokenVerify');
 
 router.use(express.json());
 
-router.get('/getFishes', async (req, res) => {
+router.get('/getFishes', tokenVerify, async (req, res) => {
     try {
         console.log("getfishes");
         const allFishes = await pool.query(pgFunctions.fish.usp_getFishes)

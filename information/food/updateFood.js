@@ -2,11 +2,12 @@ const express = require('express');
 const router = express();
 const pool = require('../../database/db');
 const pgFunctions = require('../../pgFunctions');
-const writeInLogs = require('../../services/writeInLogsFile')
+const writeInLogs = require('../../services/writeInLogsFile');
+const tokenVerify = require('../../middlewares/token/tokenVerify');
 
 router.use(express.json());
 
-router.post('/updateFood', async (req, res) => {
+router.post('/updateFood', tokenVerify, async (req, res) => {
     try {
         console.log("updateFood");
         const { id, name, number, weight, coefficient } = req.body;

@@ -3,11 +3,11 @@ const router = express();
 const pool = require('../database/db');
 const pgFunctions = require('../pgFunctions');
 const writeInLogs = require('../services/writeInLogsFile');
-
+const tokenVerify = require('../middlewares/token/tokenVerify');
 
 router.use(express.json());
 
-router.post('/deletePool', async (req, res) => {
+router.post('/deletePool', tokenVerify, async (req, res) => {
     try {
         console.log("deletepool");
         const id = req.body.id;

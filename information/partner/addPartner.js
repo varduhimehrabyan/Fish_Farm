@@ -3,10 +3,11 @@ const router = express();
 const pool = require('../../database/db');
 const pgFunctions = require('../../pgFunctions');
 const writeInLogs = require('../../services/writeInLogsFile');
+const tokenVerify = require('../../middlewares/token/tokenVerify');
 
 router.use(express.json());
 
-router.post('/addPartner', async (req, res) => {
+router.post('/addPartner', tokenVerify, async (req, res) => {
     try {
         console.log("addpartner");
         const { name, description, phone } = req.body;

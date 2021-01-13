@@ -3,11 +3,11 @@ const router = express();
 const pool = require('../database/db');
 const pgFunctions = require('../pgFunctions');
 const writeInLogs = require('../services/writeInLogsFile');
-
+const tokenVerify = require('../middlewares/token/tokenVerify');
 
 router.use(express.json());
 
-router.post('/updatePool', async (req, res) => {
+router.post('/updatePool', tokenVerify, async (req, res) => {
     try {
         console.log("updatepools");
         const { id, name, height, width, maxweight } = req.body;

@@ -8,8 +8,9 @@ const tokenVerify = require('../../middlewares/token/tokenVerify');
 router.use(express.json());
 router.use(cookieParser());
 
-router.post('/logout', tokenVerify, async (req, res) => {
+router.get('/logout', tokenVerify, async (req, res) => {
     try {
+        // res.clearCookie("token");
         const cookie = req.cookies
         console.log(cookie);
         for(let i in cookie) {
@@ -17,6 +18,7 @@ router.post('/logout', tokenVerify, async (req, res) => {
                 console.log('Not logged in!');
                 res.send({ success: false });
             } else {
+                console.log(req);
                 res.clearCookie("token")
                 console.log('Logout success!');
                 res.send({ success: true });

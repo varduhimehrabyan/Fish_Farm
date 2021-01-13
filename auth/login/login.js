@@ -11,8 +11,9 @@ router.use(express.json());
 
 router.post('/login', async (req, res) => {
     try {
+        // res.clearCookie("token");
         const { mail, password } = req.body
-       
+        if(mail && password) {
             const result = await pool.query(pgFunctions.auth.usp_login, [`${mail}`])
             console.log({success: result.rows[0].success,
             errorMessage: result.rows[0].errorMessage});
@@ -28,7 +29,7 @@ router.post('/login', async (req, res) => {
                     createToken(res, mail, result.rows[0].id, result.rows[0].typeId);
                     console.log('User logged in!');
                     console.log("success: ", result.rows[0].success);
-                    //console.log("type: ", typeof(result.rows[0].success));
+                    console.log("cookies: ", req.cookies);
                     console.log({success: result.rows[0].success,
                         errorMessage: result.rows[0].errorMessage,
                         userType: `${result.rows[0].typeId}`});
@@ -39,7 +40,12 @@ router.post('/login', async (req, res) => {
                 }
             }
 
-    } 
+    } else {
+        console.log({success: false});
+    }
+        }
+       
+            
     catch(err) {
         writeInLogs(err);
         res.send({success: false})

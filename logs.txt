@@ -85,3 +85,69 @@
 01/8/2021  10:00 
   Error: connect ETIMEDOUT 192.168.88.32:5432 
 
+01/8/2021  13:37 
+  Error: data and hash arguments required 
+
+01/8/2021  14:14 
+  Error: data and hash arguments required 
+
+01/8/2021  14:33 
+  Error: data and hash arguments required 
+
+01/11/2021  14:14 
+  Error: data and hash arguments required 
+
+01/11/2021  16:40 
+  Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client 
+
+01/11/2021  16:40 
+  Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client 
+
+01/12/2021  9:35 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  9:45 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  9:45 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  9:45 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  9:45 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  9:46 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  9:46 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  9:46 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  9:46 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  9:46 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  10:05 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  10:05 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  10:05 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  10:05 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  10:46 
+  Cannot set headers after they are sent to the client 
+
+01/12/2021  10:51 
+  Cannot set headers after they are sent to the client 
+

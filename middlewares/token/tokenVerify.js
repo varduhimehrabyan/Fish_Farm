@@ -9,29 +9,30 @@ const tokenVerify = async (req, res, next) => {
     console.log('tokenVerify')
     try {
         if (req.headers.cookie) {
-            let currentToken = req.headers.cookie.split('token=')[1]
+            console.log(req.cookies.token);
+            let currentToken = req.cookies.token
             jwt.verify(currentToken, secret, function (err, decoded) {
                 if (err) {
-                    res.send({ success: false })
-                    console.log('Token not verified!');
+                    res.send({ success: false, msg: 'Token is not verified!' })
+                    console.log('Token is not verified!');
                 } else {
                     console.log('Token verified!');
                     decoded = jwt_decode(currentToken);
                     console.log('Decoded token: ', decoded);
-                    res.send({
-                        id: decoded.id, 
-                        type: decoded.typeId
-                    })
+                    // res.send({
+                    //     id: decoded.id, 
+                    //     type: decoded.typeId
+                    // })
                     next()
                 }
             })
         
         } else {
-            res.send('no token')
+            res.send({ success: false, msg: 'No token' })
         }
     } catch (err) {
         console.log('catch')
-        re.json(err)
+        res.json(err)
     }
 }
 
