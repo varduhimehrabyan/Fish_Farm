@@ -1,0 +1,36 @@
+01/15/2021  12:37 
+  error: function usp_example() does not exist 
+
+01/15/2021  12:39 
+  error: function usp_example() does not exist 
+
+01/15/2021  12:43 
+  error: bind message supplies 1 parameters, but prepared statement "" requires 2 
+
+01/15/2021  12:44 
+  ReferenceError: Cannot access 'reports' before initialization 
+
+01/15/2021  12:45 
+  ReferenceError: Cannot access 'reports' before initialization 
+
+01/15/2021  12:51 
+  ReferenceError: Cannot access 'reports' before initialization 
+
+01/15/2021  12:52 
+  ReferenceError: Cannot access 'reports' before initialization 
+
+01/15/2021  12:53 
+  ReferenceError: Cannot access 'reports' before initialization 
+
+01/15/2021  13:04 
+  ReferenceError: Cannot access 'reports' before initialization 
+
+01/15/2021  13:05 
+  ReferenceError: Cannot access 'reports' before initialization 
+
+01/15/2021  13:46 
+  error: relation "fmin" does not exist 
+
+01/15/2021  14:31 
+  error: function usp_example(unknown) does not exist 
+

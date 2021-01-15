@@ -11,6 +11,8 @@ app.use(cors());
 app.use("/user", require('./auth'));
 app.use("/pools", require('./pool'));
 app.use("/info", require('./information'));
+app.use("/reports", require('./reports'));
+
 
 
 app.listen(4000, () => {

@@ -1,12 +1,18 @@
+const express = require('express');
+const router = express();
+const cookieParser = require('cookie-parser');
+//const tokenVerify = require('../../middlewares/token/tokenVerify')
+const writeInLogs = require('../../services/writeInLogsFile');
+const tokenVerify = require('../../middlewares/token/tokenVerify');
 const jwt = require('jsonwebtoken');
 const jwt_decode = require('jwt-decode');
 const secret = process.env.secret
 
-console.log("secret: ", secret);
+router.use(express.json());
+router.use(cookieParser());
 
-
-const tokenVerify = async (req, res, next) => {
-    console.log('tokenVerify')
+router.get('/token', async (req, res) => {
+    console.log('tokenVerify endpoint')
     try {
         if (req.headers.cookie) {
             console.log(req.cookies);
@@ -19,11 +25,11 @@ const tokenVerify = async (req, res, next) => {
                     console.log('Token verified!');
                     decoded = jwt_decode(currentToken);
                     console.log('Decoded token: ', decoded);
-                    // res.send({
-                    //     id: decoded.id, 
-                    //     type: decoded.typeId
-                    // })
-                    next()
+                    res.send({
+                        success: true
+                        // id: decoded.id, 
+                        // typeId: decoded.typeId
+                    })
                 }
             })
         
@@ -32,9 +38,9 @@ const tokenVerify = async (req, res, next) => {
         }
     } catch (err) {
         console.log('catch')
-        res.json(err)
+        res.json('err')
     }
-}
+})
 
 
-module.exports = tokenVerify
+module.exports = router;
