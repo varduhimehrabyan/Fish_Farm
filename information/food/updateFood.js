@@ -10,8 +10,8 @@ router.use(express.json());
 router.post('/updateFood', tokenVerify, async (req, res) => {
     try {
         console.log("updateFood");
-        const { id, name, number, weight, coefficient } = req.body;
-        const result = await pool.query(pgFunctions.food.usp_updateFood, [id, name, number, weight, coefficient])
+        const { id, name, number, weight } = req.body;
+        const result = await pool.query(pgFunctions.food.usp_updateFood, [id, name, number, weight])
             res.status(200).send({ success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})
        
     }

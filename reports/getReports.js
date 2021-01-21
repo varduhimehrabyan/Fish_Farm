@@ -7,15 +7,26 @@ const tokenVerify = require('../middlewares/token/tokenVerify');
 
 router.use(express.json());
 
+let date_ob = new Date();
+let date = ("0" + date_ob.getDate()).slice(-2);
+let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+let year = date_ob.getFullYear();
+// console.log(`'${year}-${month}-${date}'`);
+
 router.get('/getReports', tokenVerify, async (req, res) => {
+    // const {date} = req.body
+    console.log(`'${year}-${month}-${date}'`);
     try {
         console.log("getReports");
         // const reports = await pool.query(pgFunctions.report.usp_getReports);
-        const reports = await pool.query(pgFunctions.report.usp_example, ['2020-12-25', '2021-01-15'])
+        const reports = await pool.query(pgFunctions.report.createreport, [`'${year}-${month}-${date}'`])
+        // if(reports.rowCount == 0) {
+        //     res.send({msg: 'Տվյալ ամսաթվի համար հաշվետվություններ չեն գտնվել:'})
+        // } else {
             res.status(200).send({
                 reports: reports.rows
             })
-        
+        // }
         
     }
     catch(err)  {

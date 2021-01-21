@@ -34,3 +34,195 @@
 01/15/2021  14:31 
   error: function usp_example(unknown) does not exist 
 
+01/17/2021  18:06 
+  error: function usp_getCoefficient() does not exist 
+
+01/18/2021  9:31 
+  error: structure of query does not match function result type 
+
+01/18/2021  9:33 
+  error: structure of query does not match function result type 
+
+01/18/2021  9:34 
+  error: structure of query does not match function result type 
+
+01/18/2021  9:34 
+  error: structure of query does not match function result type 
+
+01/18/2021  14:20 
+  error: function usp_getCoefficient() does not exist 
+
+01/18/2021  14:22 
+  error: function usp_getCoefficient() does not exist 
+
+01/18/2021  14:23 
+  error: function usp_getCoefficient() does not exist 
+
+01/18/2021  14:26 
+  error: function usp_getCoefficient() does not exist 
+
+01/18/2021  14:29 
+  error: function usp_getCoefficient() does not exist 
+
+01/18/2021  16:27 
+  Error: data and hash arguments required 
+
+01/18/2021  16:47 
+  Error: data and hash arguments required 
+
+01/18/2021  22:30 
+  error: column "Coefficient" does not exist 
+
+01/18/2021  22:31 
+  error: column "Coefficient" does not exist 
+
+01/18/2021  22:31 
+  error: column "Coefficient" does not exist 
+
+01/18/2021  22:32 
+  error: column "Coefficient" does not exist 
+
+01/18/2021  22:33 
+  error: column "Coefficient" does not exist 
+
+01/18/2021  22:33 
+  error: column "Coefficient" does not exist 
+
+01/18/2021  22:37 
+  error: column "Coefficient" does not exist 
+
+01/18/2021  22:42 
+  error: column "Coefficient" does not exist 
+
+01/18/2021  22:42 
+  error: column "Coefficient" does not exist 
+
+01/18/2021  22:42 
+  error: column "Coefficient" does not exist 
+
+01/18/2021  23:09 
+  error: column "Coefficient" does not exist 
+
+01/19/2021  23:10 
+  error: column "Coefficient" does not exist 
+
+01/19/2021  23:11 
+  error: column "Coefficient" does not exist 
+
+01/19/2021  23:12 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  0:18 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  14:13 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  14:16 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  14:17 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  14:21 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  14:22 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  14:22 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  14:24 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  14:53 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  15:07 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  15:14 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  15:14 
+  error: column "Coefficient" does not exist 
+
+01/20/2021  16:38 
+  error: function createreport() does not exist 
+
+01/20/2021  16:38 
+  error: function createreport() does not exist 
+
+01/21/2021  9:25 
+  error: column "Coefficient" does not exist 
+
+01/21/2021  9:25 
+  error: column "Coefficient" does not exist 
+
+01/21/2021  9:30 
+  error: column "Coefficient" does not exist 
+
+01/21/2021  9:37 
+  error: column "Coefficient" does not exist 
+
+01/21/2021  9:38 
+  error: column "Coefficient" does not exist 
+
+01/21/2021  9:42 
+  error: column "Coefficient" does not exist 
+
+01/21/2021  9:43 
+  error: column "Coefficient" does not exist 
+
+01/21/2021  9:44 
+  error: column "Coefficient" does not exist 
+
+01/21/2021  10:57 
+  error: invalid input syntax for type date: "{}" 
+
+01/21/2021  10:58 
+  error: invalid input syntax for type date: "{}" 
+
+01/21/2021  10:58 
+  error: invalid input syntax for type date: "{}" 
+
+01/21/2021  10:58 
+  error: invalid input syntax for type date: "{}" 
+
+01/21/2021  11:00 
+  error: invalid input syntax for type date: "{}" 
+
+01/21/2021  11:01 
+  error: invalid input syntax for type date: "{}" 
+
+01/21/2021  11:01 
+  error: invalid input syntax for type date: "{}" 
+
+01/21/2021  11:03 
+  error: invalid input syntax for type date: "{}" 
+
+01/21/2021  11:03 
+  error: invalid input syntax for type date: "{}" 
+
+01/21/2021  11:30 
+  error: invalid input syntax for type date: "'2021-01-undefined'" 
+
+01/21/2021  11:30 
+  error: invalid input syntax for type date: "'2021-01-2021-01-21'" 
+
+01/21/2021  11:31 
+  error: invalid input syntax for type date: "'2021-01-2021-01-21'" 
+
+01/21/2021  11:31 
+  error: invalid input syntax for type date: "'2021-01-2021-01-21'" 
+
+01/21/2021  11:31 
+  error: invalid input syntax for type date: "'2021-01-2021-01-21'" 
+
+01/21/2021  11:32 
+  error: column "Coefficient" does not exist 
+
+01/21/2021  11:37 
+  error: column "Coefficient" does not exist 
+

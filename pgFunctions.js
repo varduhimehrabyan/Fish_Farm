@@ -42,8 +42,7 @@ module.exports = {
         usp_updatePartner: 'SELECT * FROM "usp_updatePartner"($1, $2, $3, $4)',
     },
     report: {
-        usp_getReports: 'SELECT * FROM "usp_getReports"()',
-        usp_example: 'SELECT * FROM "usp_example"($1, $2)'
+        createreport: 'SELECT * FROM "createreport"($1)',
     }
 
 }
