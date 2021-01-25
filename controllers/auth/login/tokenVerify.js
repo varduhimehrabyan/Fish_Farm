@@ -37,6 +37,7 @@ router.get('/token', async (req, res) => {
         }
     } catch (err) {
         console.log('catch')
+        writeInLogs(err)
         res.json('err')
     }
 })

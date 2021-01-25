@@ -11,7 +11,7 @@ router.post('/getReportsForMonth', tokenVerify, async (req, res) => {
     const {month, year} = req.body
     try {
         console.log("getReportsForMonth");
-        const reports = await pool.query(pgFunctions.report.usp_getReportForMonth, [month, year])
+        const reports = await pool.query(pgFunctions.report.usp_getReportForMonth, [int(month), int(year)])
             res.status(200).send({
                 reports: reports.rows
             

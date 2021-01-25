@@ -14,6 +14,9 @@ app.use("/user", require('./controllers/auth'));
 app.use("/pools", require('./controllers/api/pool'));
 app.use("/info", require('./controllers/api/information'));
 app.use("/reports", require('./controllers/api/reports'));
+app.use("/reports", require('./controllers/api/reports'));
+app.use("/feeding", require('./controllers/api/feedingAndLosses'));
+
 
 
 app.listen(4000, () => {
