@@ -42,6 +42,7 @@ module.exports = {
     },
     report: {
         createreport: 'SELECT * FROM "createreport"($1)',
+        usp_getReportForMonth: 'SELECT * FROM "usp_getReportForMonth"($1, $2)',
     }
 
 }
