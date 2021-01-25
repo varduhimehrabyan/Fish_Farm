@@ -1,18 +1,19 @@
-const express = require('express');
+global.express = require('express');
 const cors = require('cors');
 const app = express();
 const cookieParser = require('cookie-parser');
+const job = require('./job.js')
 require('dotenv').config();
 global.process.env = process.env
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
-app.use("/user", require('./auth'));
-app.use("/pools", require('./pool'));
-app.use("/info", require('./information'));
-app.use("/reports", require('./reports'));
-
+job()
+app.use("/user", require('./controllers/auth'));
+app.use("/pools", require('./controllers/api/pool'));
+app.use("/info", require('./controllers/api/information'));
+app.use("/reports", require('./controllers/api/reports'));
 
 
 app.listen(4000, () => {

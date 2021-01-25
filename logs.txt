@@ -1,36 +1,69 @@
-01/15/2021  12:37 
-  error: function usp_example() does not exist 
+01/22/2021  10:43 
+  TypeError: path must be absolute or specify root to res.sendFile 
 
-01/15/2021  12:39 
-  error: function usp_example() does not exist 
+01/22/2021  10:43 
+  ReferenceError: path is not defined 
 
-01/15/2021  12:43 
-  error: bind message supplies 1 parameters, but prepared statement "" requires 2 
+01/22/2021  10:43 
+  ReferenceError: path is not defined 
 
-01/15/2021  12:44 
-  ReferenceError: Cannot access 'reports' before initialization 
+01/22/2021  10:45 
+  TypeError: Cannot convert name to ASCII 
 
-01/15/2021  12:45 
-  ReferenceError: Cannot access 'reports' before initialization 
+01/22/2021  10:45 
+  TypeError: Cannot convert name to ASCII 
 
-01/15/2021  12:51 
-  ReferenceError: Cannot access 'reports' before initialization 
+01/22/2021  10:45 
+  TypeError: Cannot convert name to ASCII 
 
-01/15/2021  12:52 
-  ReferenceError: Cannot access 'reports' before initialization 
+01/22/2021  10:45 
+  TypeError: Cannot convert name to ASCII 
 
-01/15/2021  12:53 
-  ReferenceError: Cannot access 'reports' before initialization 
+01/22/2021  10:45 
+  TypeError: Cannot convert name to ASCII 
 
-01/15/2021  13:04 
-  ReferenceError: Cannot access 'reports' before initialization 
+01/22/2021  10:45 
+  TypeError: Cannot convert name to ASCII 
 
-01/15/2021  13:05 
-  ReferenceError: Cannot access 'reports' before initialization 
+01/22/2021  10:47 
+  TypeError: Cannot convert name to ASCII 
 
-01/15/2021  13:46 
-  error: relation "fmin" does not exist 
+01/22/2021  11:03 
+  ReferenceError: path is not defined 
 
-01/15/2021  14:31 
-  error: function usp_example(unknown) does not exist 
+01/22/2021  11:25 
+  ReferenceError: path is not defined 
+
+01/22/2021  11:26 
+  ReferenceError: path is not defined 
+
+01/22/2021  11:35 
+  ReferenceError: path is not defined 
+
+01/22/2021  11:37 
+  ReferenceError: path is not defined 
+
+01/22/2021  11:39 
+  ReferenceError: path is not defined 
+
+01/24/2021  20:24 
+  error: invalid input syntax for type date: "24" 
+
+01/24/2021  20:25 
+  error: invalid input syntax for type date: "24" 
+
+01/24/2021  20:25 
+  error: invalid input syntax for type date: "24" 
+
+01/24/2021  20:26 
+  error: invalid input syntax for type date: "24" 
+
+01/24/2021  20:27 
+  error: invalid input syntax for type date: "24" 
+
+01/24/2021  20:27 
+  error: invalid input syntax for type date: "24" 
+
+01/25/2021  10:22 
+  error: function createreport(unknown) does not exist 
 

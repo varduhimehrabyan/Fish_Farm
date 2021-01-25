@@ -1,5 +1,4 @@
 
-
 module.exports = {
     auth: {
         usp_login: 'SELECT * FROM usp_login($1)',
@@ -32,7 +31,7 @@ module.exports = {
         usp_getFoods: 'SELECT * FROM "usp_getFoods"()',
         usp_addFood: 'SELECT * FROM "usp_addFood"($1, $2, $3, $4)',
         usp_deleteFood: 'SELECT * FROM "usp_deleteFood"($1)',
-        usp_updateFood: 'SELECT * FROM usp_updateFood($1, $2, $3, $4, $5)',
+        usp_updateFood: 'SELECT * FROM "usp_updateFood"($1, $2, $3, $4)',
         usp_getCoefficient: 'SELECT * FROM "usp_getCoefficient"()'
     },
     partner: {
@@ -42,8 +41,7 @@ module.exports = {
         usp_updatePartner: 'SELECT * FROM "usp_updatePartner"($1, $2, $3, $4)',
     },
     report: {
-        usp_getReports: 'SELECT * FROM "usp_getReports"()',
-        usp_example: 'SELECT * FROM "usp_example"($1, $2)'
+        createreport: 'SELECT * FROM "createreport"($1)',
     }
 
 }

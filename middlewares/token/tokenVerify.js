@@ -1,15 +1,13 @@
 const jwt = require('jsonwebtoken');
 const jwt_decode = require('jwt-decode');
-const secret = process.env.secret
-
-console.log("secret: ", secret);
+const secret = process.env.secret;
 
 
 const tokenVerify = async (req, res, next) => {
     console.log('tokenVerify')
     try {
         if (req.headers.cookie) {
-            console.log(req.cookies);
+            // console.log(req.cookies);
             let currentToken = req.cookies.token
             jwt.verify(currentToken, secret, function (err, decoded) {
                 if (err) {
@@ -18,7 +16,7 @@ const tokenVerify = async (req, res, next) => {
                 } else {
                     console.log('Token verified!');
                     decoded = jwt_decode(currentToken);
-                    console.log('Decoded token: ', decoded);
+                    // console.log('Decoded token: ', decoded);
                     // res.send({
                     //     id: decoded.id, 
                     //     type: decoded.typeId
