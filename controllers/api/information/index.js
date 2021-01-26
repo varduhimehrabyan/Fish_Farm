@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express();
 
-router.use('/', require('./fish'));
-router.use('/', require('./food'));
-router.use('/', require('./partner'));
+router.use('/fish', require('./fish'));
+router.use('/food', require('./food'));
+router.use('/partner', require('./partner'));
 
 
 

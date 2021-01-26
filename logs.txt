@@ -205,3 +205,30 @@
 01/26/2021  13:39 
   error: column "Coefficient" does not exist 
 
+01/26/2021  13:46 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:51 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:52 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:52 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:53 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:58 
+  error: function createreport(unknown) does not exist 
+
+01/26/2021  14:00 
+  error: function createreport(unknown) does not exist 
+
+01/26/2021  14:04 
+  error: function createreport(unknown) does not exist 
+
+01/26/2021  14:06 
+  error: function createreport(unknown) does not exist 
+
