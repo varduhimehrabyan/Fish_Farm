@@ -1,6 +1,5 @@
 const fs = require('file-system');
 
-
 function writeInLogs(message) {
     try {
         fs.open('../logs.txt', 'a', (err, fd) => {

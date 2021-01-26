@@ -29,9 +29,9 @@ module.exports = {
     },
     food: {
         usp_getFoods: 'SELECT * FROM "usp_getFoods"()',
-        usp_addFood: 'SELECT * FROM "usp_addFood"($1, $2, $3, $4)',
+        usp_addFood: 'SELECT * FROM "usp_addFood"($1, $2, $3)',
         usp_deleteFood: 'SELECT * FROM "usp_deleteFood"($1)',
-        usp_updateFood: 'SELECT * FROM "usp_updateFood"($1, $2, $3, $4)',
+        usp_updateFood: 'SELECT * FROM "usp_updateFood"($1, $2, $3)',
         usp_getCoefficient: 'SELECT * FROM "usp_getCoefficient"()'
     },
     partner: {
