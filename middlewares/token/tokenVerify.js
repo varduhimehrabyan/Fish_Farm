@@ -16,11 +16,6 @@ const tokenVerify = async (req, res, next) => {
                 } else {
                     console.log('Token verified!');
                     decoded = jwt_decode(currentToken);
-                    // console.log('Decoded token: ', decoded);
-                    // res.send({
-                    //     id: decoded.id, 
-                    //     type: decoded.typeId
-                    // })
                     next()
                 }
             })

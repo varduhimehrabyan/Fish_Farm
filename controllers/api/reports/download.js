@@ -4,12 +4,11 @@ const pool = require('../../../database/db');
 const router = express();
 const Excel = require('exceljs');
 let workbook = new Excel.Workbook();
-const writeInLogs = require('../../../services/writeInLogsFile')
 
 router.post('/download', async (req, res) => {
     const {data} = req.body
+    console.log(data);
     try {
-        console.log("download");
 
     workbook.xlsx.readFile('qashach.xlsx')
     .then(function() {
@@ -28,26 +27,29 @@ router.post('/download', async (req, res) => {
             });
             rowIndex++;
         })
-
-        workbook.xlsx.writeFile(__dirname + '/' +'new1.xlsx')
+        res.download(__dirname + '/' +'new.xlsx', (err) => {
+            if(err) {
+                console.log("Error: ",err);
+            }
+        });
+        // workbook.xlsx.writeFile(__dirname + '/' +'new.xlsx')
 
     }).then(()=> {
-        res.download(__dirname + '/' +'new1.xlsx', (err) => {
+        res.download(__dirname + '/' +'new.xlsx', (err) => {
             if(err) {
-                console.log(err);
+                console.log("Error: ",err);
             }
         });
     })
     .catch((e)=>{console.log(e)})
+    // console.log(__dirname);
     
     }
     catch(err)  {
         console.log(err);
-        writeInLogs(err);
     }
     
     
 })
 
 module.exports = router
-// router.listen(5000);

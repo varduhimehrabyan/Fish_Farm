@@ -1,0 +1,207 @@
+01/25/2021  15:32 
+  error: column "Coefficient" does not exist 
+
+01/25/2021  15:34 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  9:17 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  9:20 
+  ReferenceError: int is not defined 
+
+01/26/2021  9:20 
+  ReferenceError: int is not defined 
+
+01/26/2021  9:20 
+  ReferenceError: int is not defined 
+
+01/26/2021  9:20 
+  ReferenceError: int is not defined 
+
+01/26/2021  9:20 
+  ReferenceError: int is not defined 
+
+01/26/2021  9:20 
+  ReferenceError: int is not defined 
+
+01/26/2021  9:22 
+  ReferenceError: int is not defined 
+
+01/26/2021  10:06 
+  ReferenceError: path is not defined 
+
+01/26/2021  11:38 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  11:38 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  11:38 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  11:47 
+  ReferenceError: int is not defined 
+
+01/26/2021  11:47 
+  ReferenceError: int is not defined 
+
+01/26/2021  11:47 
+  ReferenceError: int is not defined 
+
+01/26/2021  11:47 
+  ReferenceError: int is not defined 
+
+01/26/2021  11:58 
+  ReferenceError: int is not defined 
+
+01/26/2021  11:58 
+  ReferenceError: int is not defined 
+
+01/26/2021  11:58 
+  ReferenceError: int is not defined 
+
+01/26/2021  11:58 
+  ReferenceError: int is not defined 
+
+01/26/2021  11:59 
+  ReferenceError: int is not defined 
+
+01/26/2021  12:00 
+  ReferenceError: int is not defined 
+
+01/26/2021  12:02 
+  ReferenceError: int is not defined 
+
+01/26/2021  12:02 
+  ReferenceError: int is not defined 
+
+01/26/2021  12:02 
+  ReferenceError: int is not defined 
+
+01/26/2021  12:02 
+  ReferenceError: int is not defined 
+
+01/26/2021  12:02 
+  ReferenceError: int is not defined 
+
+01/26/2021  12:02 
+  ReferenceError: int is not defined 
+
+01/26/2021  12:59 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:00 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:00 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:00 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:00 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:00 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:00 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:01 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:01 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:01 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:01 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:02 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:06 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:15 
+  ReferenceError: int is not defined 
+
+01/26/2021  13:20 
+  ReferenceError: int is not defined 
+
+01/26/2021  13:20 
+  ReferenceError: int is not defined 
+
+01/26/2021  13:20 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:22 
+  ReferenceError: int is not defined 
+
+01/26/2021  13:22 
+  ReferenceError: int is not defined 
+
+01/26/2021  13:23 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:24 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:24 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:24 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:28 
+  ReferenceError: int is not defined 
+
+01/26/2021  13:28 
+  ReferenceError: int is not defined 
+
+01/26/2021  13:30 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:31 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:31 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:31 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:32 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:34 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:35 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:37 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:37 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:37 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:37 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:38 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:39 
+  error: column "Coefficient" does not exist 
+
+01/26/2021  13:39 
+  error: column "Coefficient" does not exist 
+
