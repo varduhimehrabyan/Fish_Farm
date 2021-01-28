@@ -9,7 +9,6 @@ router.use(express.json());
 
 router.post("/addFeed", tokenVerify, async (req, res) => {
   try {
-    console.log("addFeed");
     const { addFood } = req.body;
     const added = await pool.query(pgFunctions.feeding.usp_feed, [addFood]);
     res.status(200).send({

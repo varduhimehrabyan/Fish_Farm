@@ -1,20 +1,19 @@
-const request = require('request')
+const request = require('request');
+const writeInLogs = require('../../services/writeInLogsFile');
 
 const secretKey = process.env.captcha_secret_key
 
-console.log(secretKey);
+// console.log(secretKey);
 
 const captcha = (req, res, next) => {
-    console.log(req.body.captcha);
 
     if (!req.body.captcha) {
         res.json({ "success": false, "msg": "Cartcha token is undefined!" })
     } else {
         const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}`
         request(verifyUrl, (err, body) => {
-            console.log(body.success);
             if (err) {
-                console.log(err);
+                writeInLogs(err);
             } else {
                 if (!body.success && body.success === undefined) {
                     res.json({ "success": false, "msg": "captcha verification failed" })

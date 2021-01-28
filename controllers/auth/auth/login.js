@@ -15,24 +15,17 @@ router.post('/login', async (req, res) => {
         const { mail, password } = req.body
         if(mail && password) {
             const result = await pool.query(pgFunctions.auth.usp_login, [`${mail}`])
-            console.log({success: result.rows[0].success,
-            errorMessage: result.rows[0].errorMessage});
             if(result.rowCount == 0) {
                 res.send({success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})
             } else {
                 const correctPassword = await bcrypt.compare(password, result.rows[0].password)
                 if(!correctPassword) {
-                    console.log('Incorrect password!')
+                    // console.log('Incorrect password!')
                     res.send({success: false})
                 } 
                 else {
                     createToken(res, mail, result.rows[0].id, result.rows[0].typeId);
-                    console.log('User logged in!');
-                    console.log("success: ", result.rows[0].success);
-                    console.log("cookies: ", req.cookies);
-                    console.log({success: result.rows[0].success,
-                        errorMessage: result.rows[0].errorMessage,
-                        userType: `${result.rows[0].typeId}`});
+                    // console.log('User logged in!');
                     res.send({success: result.rows[0].success,
                         errorMessage: result.rows[0].errorMessage,
                         userType: `${result.rows[0].typeId}`})

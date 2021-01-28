@@ -43,6 +43,7 @@ module.exports = {
     report: {
         usp_createReport: 'SELECT * FROM "usp_createReport"($1)',
         usp_getReportForMonth: 'SELECT * FROM "usp_getReportForMonth"($1, $2)',
+        usp_storeReport: 'SELECT * FROM "usp_storeReport"()',
     },
     feeding: {
         usp_feed: 'SELECT * FROM "usp_feed"($1)',

@@ -9,9 +9,16 @@ router.use(express.json());
 
 
 router.post('/getCurrentReports', tokenVerify, async (req, res) => {
-    const {currentDate} = req.body
+
+const date = new Date();
+  const year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  if (month.toString().length == 1) {
+    month = "0" + month;
+  }
+  const day = date.getDate();
+  const currentDate = `'${year}-${month}-${day}'`;
     try {
-        console.log("getReports");
         const reports = await pool.query(pgFunctions.report.usp_createReport, [currentDate])
             res.status(200).send({
                 reports: reports.rows
@@ -29,9 +36,7 @@ router.post('/getCurrentReports', tokenVerify, async (req, res) => {
 router.post('/getReportsForMonth', tokenVerify, async (req, res) => {
     const {month, year} = req.body
     try {
-        console.log("getReportsForMonth");
         const reports = await pool.query(pgFunctions.report.usp_getReportForMonth, [parseInt(month), parseInt(year)])
-        console.log(reports);
             res.status(200).send({
                 reports: reports.rows
             

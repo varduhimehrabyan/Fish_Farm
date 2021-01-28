@@ -4,10 +4,11 @@ const pool = require('../../../database/db');
 const router = express();
 const Excel = require('exceljs');
 let workbook = new Excel.Workbook();
+const writeInLogs = require('../../../services/writeInLogsFile');
 
 router.post('/download', async (req, res) => {
-    const {data} = req.body
-    console.log(data);
+    const {reports} = req.body
+    // console.log(req.body);
     try {
 
     workbook.xlsx.readFile('qashach.xlsx')
@@ -17,7 +18,7 @@ router.post('/download', async (req, res) => {
         let rowIndex = 5;
         let date = new Date()
         worksheet.getRow(1).getCell(2).value = date.getDate() + '.' + date.getMonth() + 1 + '.' + date.getFullYear()
-        data.forEach( record => {
+        reports.forEach( record => {
             let columnIndex = 1;
             var row = worksheet.getRow(rowIndex);
             Object.keys(record ).forEach(columnName =>{
@@ -27,26 +28,41 @@ router.post('/download', async (req, res) => {
             });
             rowIndex++;
         })
-        res.download(__dirname + '/' +'new.xlsx', (err) => {
-            if(err) {
-                console.log("Error: ",err);
-            }
-        });
-        // workbook.xlsx.writeFile(__dirname + '/' +'new.xlsx')
+        // res.download(__dirname + '/' +'new.xlsx', (err) => {
+        //     if(err) {
+        //         writeInLogs("Error: ",err);
+        //     }
+        // });
+        
+        // workbook.xlsx.writeFile(__dirname + '/' +'xlsx')
+        // return workbook.xlsx.write(res).then(function () {
+        //     res.status(200).end();
+        //   });
 
     }).then(()=> {
-        res.download(__dirname + '/' +'new.xlsx', (err) => {
-            if(err) {
-                console.log("Error: ",err);
-            }
-        });
+        
+        res.setHeader(
+            "Content-Type",
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          );
+          res.setHeader(
+            "Content-Disposition",
+            "attachment; filename=" + ".xlsx"
+          );
+        //   res.download(__dirname + '/' +'new.xlsx', (err) => {
+        //     if(err) {
+        //         writeInLogs("Error: ",err);
+        //     }
+        // });
+        workbook.xlsx.write(res).then(function () {
+            res.status(200).end();
+          });
     })
-    .catch((e)=>{console.log(e)})
-    // console.log(__dirname);
+    .catch((e)=>{writeInLogs(e)})
     
     }
     catch(err)  {
-        console.log(err);
+        writeInLogs(err);
     }
     
     

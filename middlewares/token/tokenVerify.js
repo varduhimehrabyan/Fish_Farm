@@ -1,10 +1,10 @@
 const jwt = require('jsonwebtoken');
 const jwt_decode = require('jwt-decode');
 const secret = process.env.secret;
+const writeInLogs = require('../../services/writeInLogsFile')
 
 
 const tokenVerify = async (req, res, next) => {
-    console.log('tokenVerify')
     try {
         if (req.headers.cookie) {
             // console.log(req.cookies);
@@ -12,9 +12,8 @@ const tokenVerify = async (req, res, next) => {
             jwt.verify(currentToken, secret, function (err, decoded) {
                 if (err) {
                     res.send({ success: false, msg: 'Token is not verified!' })
-                    console.log('Token is not verified!');
                 } else {
-                    console.log('Token verified!');
+                    // console.log('Token verified!');
                     decoded = jwt_decode(currentToken);
                     next()
                 }
@@ -24,7 +23,7 @@ const tokenVerify = async (req, res, next) => {
             res.send({ success: false, msg: 'No token' })
         }
     } catch (err) {
-        console.log('catch')
+        writeInLogs(err)
         res.json(err)
     }
 }

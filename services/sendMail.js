@@ -26,7 +26,7 @@ const sendMail = async (mail) =>  {
         transporter.sendMail({
           from: 'test.fish.farm@gmail.com', 
           to: `${mail}`, 
-          subject: 'Verification link for <Fish Farm> company!',
+          subject: 'Հաշվետվությունները թարմացվել են։',
           html: htmlForm
         }, (err) => {
             if(err) {

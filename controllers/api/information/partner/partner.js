@@ -10,9 +10,7 @@ router.use(express.json());
 
 router.get('/getPartners', tokenVerify, async (req, res) => {
     try {
-        console.log("getPartners");
         const allPartners = await pool.query(pgFunctions.partner.usp_getPartners)
-            console.log(allPartners.rows),
             res.status(200).send({
                 allPartners: allPartners.rows
             })
@@ -27,7 +25,6 @@ router.get('/getPartners', tokenVerify, async (req, res) => {
 
 router.post('/addPartner', tokenVerify, async (req, res) => {
     try {
-        console.log("addpartner");
         const { name, description, phone } = req.body;
         const added = await pool.query(pgFunctions.partner.usp_addPartner, [name, description, phone])
             res.status(200).send({ success: added.rows[0].success, errorMessage: added.rows[0].errorMessage,id: added.rows[0].id})
@@ -42,7 +39,6 @@ router.post('/addPartner', tokenVerify, async (req, res) => {
 
 router.post('/deletePartner', tokenVerify, async (req, res) => {
     try {
-        console.log("deletePartner");
         const { id } = req.body;
         const result = await pool.query(pgFunctions.partner.usp_deletePartner, [id])
             res.status(200).send({ success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})
@@ -57,7 +53,6 @@ router.post('/deletePartner', tokenVerify, async (req, res) => {
 
 router.post('/updatePartner', tokenVerify, async (req, res) => {
     try {
-        console.log("updatePartner");
         const { id, name, description, phone } = req.body;
         const result = await pool.query(pgFunctions.partner.usp_updatePartner, [id, name, description, phone])
             res.status(200).send({ success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})

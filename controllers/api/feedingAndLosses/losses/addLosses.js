@@ -9,7 +9,6 @@ router.use(express.json());
 
 router.post("/addLosse", tokenVerify, async (req, res) => {
   try {
-    console.log("addLosse");
     const { addLosses } = req.body;
     const added = await pool.query(pgFunctions.losses.usp_loss, [addLosses]);
     res.status(200).send({
