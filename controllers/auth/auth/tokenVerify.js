@@ -1,4 +1,4 @@
-const express = require('express');
+// const express = require('express');
 const router = express();
 const cookieParser = require('cookie-parser');
 const writeInLogs = require('../../../services/writeInLogsFile');
@@ -37,6 +37,7 @@ router.get('/token', async (req, res) => {
         }
     } catch (err) {
         console.log('catch')
+        writeInLogs(err)
         res.json('err')
     }
 })

@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express();
 
-router.use('/', require('./partner'));
-
+router.use('/', require('./addLosses'));
 
 module.exports = router;
 

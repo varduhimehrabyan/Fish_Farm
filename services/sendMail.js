@@ -1,4 +1,4 @@
-const express = require('express');
+// const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const writeInLogs = require('../services/writeInLogsFile');
@@ -15,22 +15,17 @@ const htmlForm = `<div style="font - family: verdana; max-width:500px; margin-le
 const sendMail = async (mail) =>  {
     try {
         
-        // create reusable transporter object using the default SMTP transport
         let transporter = await nodemailer.createTransport({
           service: "gmail",
           auth: {
-            user: 'test.fish.farm@gmail.com', // generated ethereal user
-            pass: 'fishFarmTest777', // generated ethereal password
+            user: 'test.fish.farm@gmail.com',
+            pass: 'fishFarmTest777',
           },
-        //   tls: {
-        //       rejectUnauthorized: false
-        //   }
         });
       
-        // send mail with defined transport object
         transporter.sendMail({
-          from: 'test.fish.farm@gmail.com', // sender address
-          to: `${mail}`, // list of receivers
+          from: 'test.fish.farm@gmail.com', 
+          to: `${mail}`, 
           subject: 'Verification link for <Fish Farm> company!',
           html: htmlForm
         }, (err) => {
@@ -47,4 +42,4 @@ const sendMail = async (mail) =>  {
     }
 }
 
-module.exports = sendMail
+module.exports = sendMail;
