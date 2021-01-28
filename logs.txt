@@ -1,6 +1,0 @@
-01/28/2021  11:42 
-  error: null value in column "PoolId" violates not-null constraint 
-
-01/28/2021  13:09 
-  error: bind message supplies 5 parameters, but prepared statement "" requires 3 
-

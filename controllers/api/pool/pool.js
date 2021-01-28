@@ -39,8 +39,8 @@ router.get('/getPoolsAndDetails', tokenVerify, async (req, res) => {
 router.post('/addPool', tokenVerify, async (req, res) => {
     try {
         console.log("addpool");
-        const { name, height, width, maxweight } = req.body;
-        const added = await pool.query(pgFunctions.pool.usp_addPool, [name, height, width, maxweight])
+        const { name, fishName } = req.body;
+        const added = await pool.query(pgFunctions.pool.usp_addPool, [name, fishName])
             console.log(added.rows[0].success)
             res.status(200).send({ success: added.rows[0].success, errorMessage: added.rows[0].errorMessage,id: added.rows[0].id})
     }
@@ -68,8 +68,8 @@ router.post('/deletePool', tokenVerify, async (req, res) => {
 router.post('/updatePool', tokenVerify, async (req, res) => {
     try {
         console.log("updatepools");
-        const { id, name, fishType } = req.body;
-        const result = await pool.query(pgFunctions.pool.usp_updatePool, [id, name, fishType])
+        const { id, name, fishName } = req.body;
+        const result = await pool.query(pgFunctions.pool.usp_updatePool, [id, name, fishName])
         res.status(200).send({ success: result.rows[0].success, errorMessage: result.rows[0].errorMessage})
     }
     catch(err)  {
