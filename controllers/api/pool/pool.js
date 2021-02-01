@@ -69,9 +69,19 @@ router.post('/updatePool', tokenVerify, async (req, res) => {
     catch(err)  {
         writeInLogs(err);
     }
-    
-
 })
 
+
+router.post('/correct', tokenVerify, async (req, res) => {
+    try {
+        const { id, quantity } = req.body;
+        const added = await pool.query(pgFunctions.pool.usp_correct, [id, quantity])
+            res.status(200).send({ success: added.rows[0].success, errorMessage: added.rows[0].errorMessage,id: added.rows[0].id})
+    }
+    catch(err)  {
+        writeInLogs(err);
+    }
+    
+})
 
 module.exports = router
