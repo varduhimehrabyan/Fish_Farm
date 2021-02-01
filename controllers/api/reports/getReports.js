@@ -35,6 +35,7 @@ const date = new Date();
 
 router.post('/getReportsForMonth', tokenVerify, async (req, res) => {
     const {month, year} = req.body
+    console.log(month, year);
     try {
         const reports = await pool.query(pgFunctions.report.usp_getReportForMonth, [parseInt(month), parseInt(year)])
             res.status(200).send({

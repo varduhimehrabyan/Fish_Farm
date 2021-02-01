@@ -1,48 +1,15 @@
-01/28/2021  15:09 
+02/1/2021  11:43 
+  TypeError: req.body.forEach is not a function 
+
+02/1/2021  11:44 
   TypeError: Cannot read property 'forEach' of undefined 
 
-01/28/2021  15:15 
+02/1/2021  11:44 
   TypeError: Cannot read property 'forEach' of undefined 
 
-01/28/2021  15:15 
+02/1/2021  11:44 
   TypeError: Cannot read property 'forEach' of undefined 
 
-01/28/2021  15:15 
+02/1/2021  11:45 
   TypeError: Cannot read property 'forEach' of undefined 
-
-01/28/2021  15:15 
-  TypeError: Cannot read property 'forEach' of undefined 
-
-01/28/2021  15:15 
-  TypeError: Cannot read property 'forEach' of undefined 
-
-01/28/2021  15:15 
-  TypeError: Cannot read property 'forEach' of undefined 
-
-01/28/2021  15:16 
-  TypeError: Cannot read property 'forEach' of undefined 
-
-01/28/2021  15:17 
-  TypeError: Cannot read property 'forEach' of undefined 
-
-01/28/2021  15:17 
-  TypeError: Cannot read property 'forEach' of undefined 
-
-01/28/2021  15:20 
-  error: function usp_createReport(unknown) does not exist 
-
-01/28/2021  15:21 
-  error: structure of query does not match function result type 
-
-01/28/2021  15:22 
-  error: structure of query does not match function result type 
-
-01/28/2021  15:22 
-  error: structure of query does not match function result type 
-
-01/28/2021  15:22 
-  error: structure of query does not match function result type 
-
-01/28/2021  16:07 
-  TypeError: pgFunctions.report.usp_storeReport is not a function 
 
