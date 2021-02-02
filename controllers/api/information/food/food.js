@@ -108,4 +108,27 @@ router.post("/updateWeight", tokenVerify, async (req, res) => {
   }
 });
 
+
+router.post("/foodHistory", tokenVerify, async (req, res) => {
+  
+  try {
+    // console.log(req.body);
+    console.log("object1");
+    const { id } = req.body;
+    console.log(id, "id");
+    const result = await pool.query(pgFunctions.feedHistory.usp_poolReportFood, [
+      id
+     
+    ]);
+  // console.log(result, "result")
+
+    res.status(200).send({
+      // success: result.rows[0].success,
+      fields: result.fields
+    });
+  } catch (err) {
+    writeInLogs(err);
+  }
+});
+
 module.exports = router;

@@ -7,3 +7,36 @@
 02/2/2021  13:46 
   error: malformed array literal: "" 
 
+02/2/2021  17:02 
+  TypeError: Cannot read property 'success' of undefined 
+
+02/2/2021  17:02 
+  TypeError: Cannot read property 'success' of undefined 
+
+02/2/2021  17:02 
+  TypeError: Cannot read property 'success' of undefined 
+
+02/2/2021  17:03 
+  TypeError: Cannot read property 'success' of undefined 
+
+02/2/2021  17:04 
+  TypeError: Cannot read property 'success' of undefined 
+
+02/2/2021  17:04 
+  TypeError: Cannot read property 'success' of undefined 
+
+02/2/2021  17:05 
+  ReferenceError: added is not defined 
+
+02/2/2021  17:06 
+  TypeError: Cannot read property 'success' of undefined 
+
+02/2/2021  17:07 
+  TypeError: Cannot read property 'success' of undefined 
+
+02/2/2021  17:08 
+  TypeError: Cannot read property 'success' of undefined 
+
+02/2/2021  17:08 
+  TypeError: Cannot read property 'success' of undefined 
+
