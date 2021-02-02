@@ -15,8 +15,6 @@ router.get('/download', (req,res) => {
 })
 
 router.post('/download', async (req, res) => {
-    // const {reports} = req.body
-    //  console.log(req.body);
     try {
 
     workbook.xlsx.readFile('qashach.xlsx')
@@ -36,19 +34,12 @@ router.post('/download', async (req, res) => {
             });
             rowIndex++;
         })
-        // res.download(__dirname + '/' +'new.xlsx','new1.xlsx', (err) => {
-        //     if(err) {
-        //         console.log("Error: ",err);
-        //     }
-        // });
         workbook.xlsx.writeFile(__dirname + '/' +'new.xlsx')
 
     }).then(()=> {
-        // res.redirect('http://localhost:4000/reports/d/download')
         res.send('ok')
     })
     .catch((e)=>{writeInLogs(e)})
-    // console.log(__dirname);
     
     }
     catch(err)  {

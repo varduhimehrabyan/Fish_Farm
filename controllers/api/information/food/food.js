@@ -41,7 +41,7 @@ router.post("/addFood", tokenVerify, async (req, res) => {
 router.post("/deleteFood", tokenVerify, async (req, res) => {
   try {
     const { id } = req.body;
-    const result = await pool.query(pgFunctions.food.usp_deleteFoods, [id]);
+    const result = await pool.query(pgFunctions.food.usp_deleteFood, [id]);
     res
       .status(200)
       .send({

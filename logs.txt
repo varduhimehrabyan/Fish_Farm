@@ -1,66 +1,9 @@
-02/1/2021  11:43 
-  TypeError: req.body.forEach is not a function 
+02/2/2021  13:41 
+  error: invalid input syntax for type json 
 
-02/1/2021  11:44 
-  TypeError: Cannot read property 'forEach' of undefined 
+02/2/2021  13:44 
+  error: invalid input syntax for type json 
 
-02/1/2021  11:44 
-  TypeError: Cannot read property 'forEach' of undefined 
-
-02/1/2021  11:44 
-  TypeError: Cannot read property 'forEach' of undefined 
-
-02/1/2021  11:45 
-  TypeError: Cannot read property 'forEach' of undefined 
-
-02/1/2021  15:18 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:19 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:19 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:19 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:19 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:19 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:19 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:20 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:20 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:20 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:21 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:24 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:24 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:26 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:27 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  15:27 
-  error: column reference "PoolId" is ambiguous 
-
-02/1/2021  16:50 
-  error: null value in column "Name" violates not-null constraint 
+02/2/2021  13:46 
+  error: malformed array literal: "" 
 
