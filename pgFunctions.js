@@ -50,6 +50,7 @@ module.exports = {
   },
   feedHistory: {
     usp_poolReportFood: 'SELECT * FROM "usp_poolReportFood"($1)',
+    usp_poolReportFish:'SELECT * FROM "usp_poolReportFish"($1)'
   },
   losses: {
     usp_loss: 'SELECT * FROM "usp_loss"($1)',
