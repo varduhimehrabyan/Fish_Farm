@@ -19,7 +19,6 @@ app.use("/info", require('./controllers/api/information'));
 app.use("/reports", require('./controllers/api/reports'));
 app.use("/feeding", require('./controllers/api/feedingAndLosses/feeding'));
 app.use("/losses", require('./controllers/api/feedingAndLosses/losses'));
-app.use("/feeding-move-history", require('./controllers/api/feedingHistory'));
 
 
 

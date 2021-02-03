@@ -9,8 +9,8 @@ router.use(express.json());
 
 router.post('/sales', tokenVerify, async (req, res) => {
     try {
-        const { fromPoolid, quantity, weight, avgWeight, partnerId, description } = req.body;
-        const result = await pool.query(pgFunctions.pool.sale.usp_fishOut, [fromPoolid, quantity, weight, avgWeight, partnerId, description]);
+        const { fromPoolid, quantity, weight, forSend, partnerId, description } = req.body;
+        const result = await pool.query(pgFunctions.pool.sale.usp_fishOut, [fromPoolid, quantity, weight, forSend, partnerId, description]);
         res.send({success: result.rows[0].success, errorMessage: result.rows[0].errorMessage});
     }
     catch(err) {

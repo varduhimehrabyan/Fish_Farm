@@ -127,6 +127,7 @@ router.post("/moveHistory", tokenVerify, async (req, res) => {
   const { id } = req.body;
   console.log(id, "id");
   const result = await pool.query(pgFunctions.feedHistory.usp_poolReportFish, [      id      ]);  
+  console.log(result.rows, "result move")
   res.status(200).send({     
     fields: result.rows
   });
