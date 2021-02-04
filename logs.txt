@@ -4,3 +4,9 @@
 02/3/2021  23:30 
   ReferenceError: month is not defined 
 
+02/4/2021  9:59 
+  error: password authentication failed for user "postgres" 
+
+02/4/2021  9:59 
+  error: password authentication failed for user "postgres" 
+
