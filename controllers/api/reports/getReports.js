@@ -8,12 +8,12 @@ const tokenVerify = require('../../../middlewares/token/tokenVerify');
 router.use(express.json());
 
 
-router.get('/getCurrentReports', tokenVerify, async (req, res) => {
+router.post('/getCurrentReports', tokenVerify, async (req, res) => {
 
-const date = new Date();
     try {
-        const reports = await pool.query(pgFunctions.report.usp_createReport, [])
-            res.status(200).send({
+        const reports = await pool.query(pgFunctions.report.usp_createReport)
+        // console.log(reports);
+            res.send({
                 reports: reports.rows
             
             })
@@ -31,7 +31,7 @@ router.post('/getReportsForMonth', tokenVerify, async (req, res) => {
     console.log(month, year);
     try {
         const reports = await pool.query(pgFunctions.report.usp_getReportForMonth, [parseInt(month), parseInt(year)])
-        console.log(reports);
+        // console.log(reports);
             res.status(200).send({
                 reports: reports.rows
             

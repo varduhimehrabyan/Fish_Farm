@@ -1,27 +1,6 @@
-02/3/2021  13:26 
-  TypeError: req.body.forEach is not a function 
+02/3/2021  23:29 
+  ReferenceError: month is not defined 
 
-02/3/2021  16:34 
-  error: function usp_createReport(unknown) does not exist 
-
-02/3/2021  16:36 
-  error: function usp_createReport(unknown) does not exist 
-
-02/3/2021  16:36 
-  error: function usp_createReport(unknown) does not exist 
-
-02/3/2021  16:37 
-  error: function usp_createReport(unknown) does not exist 
-
-02/3/2021  16:37 
-  error: function usp_createReport(unknown) does not exist 
-
-02/3/2021  16:37 
-  error: function usp_createReport(unknown) does not exist 
-
-02/3/2021  16:39 
-  error: function usp_createReport(unknown) does not exist 
-
-02/3/2021  16:39 
-  error: function usp_createReport(unknown) does not exist 
+02/3/2021  23:30 
+  ReferenceError: month is not defined 
 
