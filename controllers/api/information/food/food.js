@@ -26,13 +26,11 @@ router.post("/addFood", tokenVerify, async (req, res) => {
       number,
       weight,
     ]);
-    res
-      .status(200)
-      .send({
-        success: added.rows[0].success,
-        errorMessage: added.rows[0].errorMessage,
-        id: added.rows[0].id,
-      });
+    res.status(200).send({
+      success: added.rows[0].success,
+      errorMessage: added.rows[0].errorMessage,
+      id: added.rows[0].id,
+    });
   } catch (err) {
     writeInLogs(err);
   }
@@ -42,12 +40,10 @@ router.post("/deleteFood", tokenVerify, async (req, res) => {
   try {
     const { id } = req.body;
     const result = await pool.query(pgFunctions.food.usp_deleteFood, [id]);
-    res
-      .status(200)
-      .send({
-        success: result.rows[0].success,
-        errorMessage: result.rows[0].errormessage,
-      });
+    res.status(200).send({
+      success: result.rows[0].success,
+      errorMessage: result.rows[0].errormessage,
+    });
   } catch (err) {
     writeInLogs(err);
   }
@@ -62,12 +58,10 @@ router.post("/updateFood", tokenVerify, async (req, res) => {
       number,
       weight,
     ]);
-    res
-      .status(200)
-      .send({
-        success: result.rows[0].success,
-        errorMessage: result.rows[0].errorMessage,
-      });
+    res.status(200).send({
+      success: result.rows[0].success,
+      errorMessage: result.rows[0].errorMessage,
+    });
   } catch (err) {
     writeInLogs(err);
   }
@@ -85,10 +79,10 @@ router.get("/getCoefficient", async (req, res) => {
 });
 
 router.post("/updateWeight", tokenVerify, async (req, res) => {
-  console.log("object");
+  // console.log("object");
   try {
     // console.log(req.body);
-    console.log("object1");
+    // console.log("object1");
     const { id, weight, description, partnerid } = req.body;
     // console.log(parseInt(weight));
     const result = await pool.query(pgFunctions.food.usp_updateTheFood, [
@@ -97,7 +91,7 @@ router.post("/updateWeight", tokenVerify, async (req, res) => {
       description,
       parseInt(partnerid),
     ]);
-    console.log(result, "result");
+    // console.log(result, "result");
 
     res.status(200).send({
       success: result.rows[0].success,
@@ -108,14 +102,16 @@ router.post("/updateWeight", tokenVerify, async (req, res) => {
   }
 });
 
-
 router.post("/foodHistory", tokenVerify, async (req, res) => {
-    try {  
+  try {
     const { id } = req.body;
-    console.log(id, "id");
-    const result = await pool.query(pgFunctions.feedHistory.usp_poolReportFood, [      id      ]);  
-    res.status(200).send({     
-      fields: result.rows
+    // console.log(id, "id");
+    const result = await pool.query(
+      pgFunctions.feedHistory.usp_poolReportFood,
+      [id]
+    );
+    res.status(200).send({
+      fields: result.rows,
     });
   } catch (err) {
     writeInLogs(err);
@@ -123,17 +119,20 @@ router.post("/foodHistory", tokenVerify, async (req, res) => {
 });
 
 router.post("/moveHistory", tokenVerify, async (req, res) => {
-  try {  
-  const { id } = req.body;
-  console.log(id, "id");
-  const result = await pool.query(pgFunctions.feedHistory.usp_poolReportFish, [      id      ]);  
-  console.log(result.rows, "result move")
-  res.status(200).send({     
-    fields: result.rows
-  });
-} catch (err) {
-  writeInLogs(err);
-}
+  try {
+    const { id } = req.body;
+    // console.log(id, "id");
+    const result = await pool.query(
+      pgFunctions.feedHistory.usp_poolReportFish,
+      [id]
+    );
+    // console.log(result.rows, "result move")
+    res.status(200).send({
+      fields: result.rows,
+    });
+  } catch (err) {
+    writeInLogs(err);
+  }
 });
 
 module.exports = router;
