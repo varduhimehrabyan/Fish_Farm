@@ -7,7 +7,7 @@ require("dotenv").config();
 // const job = require('./job.js');
 global.process.env = process.env;
 
-app.use('/', require('./fishFarm'));
+app.use('/', require('./client/fishFarm'));
 
 app.use(express.json());
 app.use(cookieParser());
@@ -20,6 +20,6 @@ app.use("/reports", require("./controllers/api/reports"));
 app.use("/feeding", require("./controllers/api/feedingAndLosses/feeding"));
 app.use("/losses", require("./controllers/api/feedingAndLosses/losses"));
 
-app.listen(4000, () => {
-  console.log('Server is running on port 4000')
+app.listen(5000, () => {
+  console.log('Server is running on port 5000')
 });
