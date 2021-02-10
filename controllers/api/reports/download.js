@@ -22,8 +22,7 @@ router.post("/download", async (req, res) => {
         let worksheet = workbook.worksheets[0];
         let rowIndex = 5;
         let date = new Date();
-        worksheet.getRow(1).getCell(2).value =
-          date.getDate() + "." + date.getMonth() + 1 + "." + date.getFullYear();
+        worksheet.getRow(1).getCell(3).value = date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear()
         req.body.forEach((record) => {
           let columnIndex = 1;
           var row = worksheet.getRow(rowIndex);
