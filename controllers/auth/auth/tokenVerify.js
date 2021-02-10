@@ -5,7 +5,7 @@ const writeInLogs = require('../../../services/writeInLogsFile');
 const tokenVerify = require('../../../middlewares/token/tokenVerify');
 const jwt = require('jsonwebtoken');
 const jwt_decode = require('jwt-decode');
-const secret = process.env.secret
+const secret = global.env.secret
 
 router.use(express.json());
 router.use(cookieParser());

@@ -1,7 +1,7 @@
 const request = require('request');
 const writeInLogs = require('../../services/writeInLogsFile');
 
-const secretKey = process.env.captcha_secret_key
+const secretKey = global.env.captcha_secret_key
 
 // console.log(secretKey);
 

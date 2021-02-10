@@ -2,12 +2,15 @@ global.express = require("express");
 const cors = require("cors");
 const app = express();
 const cookieParser = require("cookie-parser");
-const jobForMail = require("./jobForMail.js");
-require("dotenv").config();
+// const jobForMail = require("./jobForMail.js");
+// require("dotenv").config();
 // const job = require('./job.js');
-global.process.env = process.env;
+// global.process.env = process.env;
+const secureEnv = require('secure-env');
+global.env = secureEnv({secret:'Zh-43VTW4fGVZK6fW4Ls'});
+ 
 
-app.use('/', require('./client/fishFarm'));
+app.use('/', require('./fishFarm'));
 
 app.use(express.json());
 app.use(cookieParser());

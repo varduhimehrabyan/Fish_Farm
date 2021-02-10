@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const jwt_decode = require('jwt-decode');
-const secret = process.env.secret;
+const secret = global.env.secret;
 const writeInLogs = require('../../services/writeInLogsFile')
 
 
