@@ -24,6 +24,6 @@ app.use("/reports", require("./controllers/api/reports"));
 app.use("/feeding", require("./controllers/api/feedingAndLosses/feeding"));
 app.use("/losses", require("./controllers/api/feedingAndLosses/losses"));
 
-app.listen(2000, () => {
-  console.log('Server is running on port 2000')
+app.listen(4000, () => {
+  console.log('Server is running on port 4000')
 });
