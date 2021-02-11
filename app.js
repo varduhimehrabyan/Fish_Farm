@@ -3,11 +3,12 @@ const cors = require("cors");
 const app = express();
 const cookieParser = require("cookie-parser");
 // const jobForMail = require("./jobForMail.js");
-// require("dotenv").config();
+require("dotenv").config();
 // const job = require('./job.js');
 // global.process.env = process.env;
-const secureEnv = require('secure-env');
-global.env = secureEnv({secret:'Zh-43VTW4fGVZK6fW4Ls'});
+// const secureEnv = require('secure-env');
+global.env = process.env
+// secureEnv({secret:'Zh-43VTW4fGVZK6fW4Ls'});
  
 
 app.use('/', require('./fishFarm'));
@@ -23,6 +24,6 @@ app.use("/reports", require("./controllers/api/reports"));
 app.use("/feeding", require("./controllers/api/feedingAndLosses/feeding"));
 app.use("/losses", require("./controllers/api/feedingAndLosses/losses"));
 
-app.listen(5000, () => {
-  console.log('Server is running on port 5000')
+app.listen(2000, () => {
+  console.log('Server is running on port 2000')
 });
