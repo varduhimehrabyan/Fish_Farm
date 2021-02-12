@@ -3,7 +3,6 @@ const cors = require("cors");
 const app = express();
 const cookieParser = require("cookie-parser");
 // const jobForMail = require("./jobForMail.js");
-// require("dotenv").config();
 // const job = require('./job.js');
 // global.process.env = process.env;
 // const secureEnv = require('secure-env');
@@ -24,7 +23,7 @@ app.use("/reports", require("./controllers/api/reports"));
 app.use("/feeding", require("./controllers/api/feedingAndLosses/feeding"));
 app.use("/losses", require("./controllers/api/feedingAndLosses/losses"));
 
-// app.use('/', require('./fishFarm'));
+app.use('/', require('./fishFarm'));
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000')
