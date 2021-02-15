@@ -1,16 +1,15 @@
 const {Pool} = require('pg');
 require('dotenv').config()
-// const secureEnv = require('secure-env');
-global.env = process.env
-// secureEnv({secret:'Zh-43VTW4fGVZK6fW4Ls'});
+const secureEnv = require('secure-env');
+global.env = secureEnv({secret:'Zh-43VTW4fGVZK6fW4Ls'});
 console.log(process.env.user);
 
 const pool = new Pool({
-  user: process.env.user,
-  password: process.env.password,
-  host: process.env.host,
-  port: process.env.port,
-  database: process.env.database
+  user: global.env.user,
+  password: global.env.password,
+  host: global.env.host,
+  port: global.env.port,
+  database: global.env.database
 })
 
   module.exports = pool;

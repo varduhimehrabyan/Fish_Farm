@@ -10,8 +10,6 @@ const cookieParser = require("cookie-parser");
 // secureEnv({secret:'Zh-43VTW4fGVZK6fW4Ls'});
  
 
-
-
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
@@ -23,7 +21,7 @@ app.use("/reports", require("./controllers/api/reports"));
 app.use("/feeding", require("./controllers/api/feedingAndLosses/feeding"));
 app.use("/losses", require("./controllers/api/feedingAndLosses/losses"));
 
-app.use('/', require('./fishFarm'));
+// app.use('/', require('./fishFarm'));
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000')

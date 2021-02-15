@@ -3,12 +3,14 @@ const router = express();
 const Excel = require("exceljs");
 let workbook = new Excel.Workbook();
 const writeInLogs = require("../../../services/writeInLogsFile");
+const { error } = require("console");
 
 router.use(express.json());
 
 router.get("/download", (req, res) => {
   res.download(__dirname + "/" + "new.xlsx", (err) => {
     if (err) {
+      writeInLogs(error)
       // console.log("Error: ",err);
     }
   });
