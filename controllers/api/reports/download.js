@@ -3,15 +3,15 @@ const router = express();
 const Excel = require("exceljs");
 let workbook = new Excel.Workbook();
 const writeInLogs = require("../../../services/writeInLogsFile");
-const tokenVerify = require('../../../middlewares/token/tokenVerify');
-
+const tokenVerify = require("../../../middlewares/token/tokenVerify");
+const { error } = require("console");
 
 router.use(express.json());
 
 router.get("/download", tokenVerify, (req, res) => {
   res.download(__dirname + "/" + "new.xlsx", (err) => {
     if (err) {
-      writeInLogs(err)
+      writeInLogs(error)
       // console.log("Error: ",err);
     }
   });
@@ -39,7 +39,7 @@ router.post("/download", tokenVerify, async (req, res) => {
         workbook.xlsx.writeFile(__dirname + "/" + "new.xlsx");
       })
       .then(() => {
-        res.send("ok");
+        res.send({success: true});
       })
       .catch((e) => {
         writeInLogs(e);
