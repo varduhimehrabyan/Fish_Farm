@@ -3,18 +3,21 @@ const router = express();
 const Excel = require("exceljs");
 let workbook = new Excel.Workbook();
 const writeInLogs = require("../../../services/writeInLogsFile");
+const tokenVerify = require('../../../middlewares/token/tokenVerify');
+
 
 router.use(express.json());
 
-router.get("/download", (req, res) => {
+router.get("/download", tokenVerify, (req, res) => {
   res.download(__dirname + "/" + "new.xlsx", (err) => {
     if (err) {
+      writeInLogs(err)
       // console.log("Error: ",err);
     }
   });
 });
 
-router.post("/download", async (req, res) => {
+router.post("/download", tokenVerify, async (req, res) => {
   try {
     workbook.xlsx
       .readFile("qashach.xlsx")

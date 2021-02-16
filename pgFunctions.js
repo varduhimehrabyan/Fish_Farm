@@ -8,7 +8,7 @@ module.exports = {
     usp_deletePool: 'SELECT * FROM "usp_deletePool"($1)',
     usp_updatePool: 'SELECT * FROM "usp_updatePool"($1, $2, $3)',
     usp_getPools: 'SELECT * FROM "usp_getPools"()',
-    usp_correct: 'SELECT * FROM "usp_correct"($1, $2)',
+    usp_correct: 'SELECT * FROM "usp_correct"($1, $2, $3)',
 
     sale: {
       usp_fishOut: 'SELECT * FROM "usp_fishOut"($1, $2, $3, $4, $5, $6)',

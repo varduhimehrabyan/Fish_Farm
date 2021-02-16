@@ -6,6 +6,7 @@ router.use(express.json())
 
 router.use(express.static("client/fishFarm"))
 router.get("*", (req, res) => {
+// console.log(path.resolve(__dirname, "client", "fishFarm", "index.html"));
 res.sendFile(path.resolve(__dirname, "client", "fishFarm", "index.html"))
 })
 
