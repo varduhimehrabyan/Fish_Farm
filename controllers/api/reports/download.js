@@ -9,7 +9,7 @@ const { error } = require("console");
 router.use(express.json());
 
 router.get("/download", tokenVerify, (req, res) => {
-  res.download(__dirname + "/" + "new.xlsx", (err) => {
+  res.download(__dirname + "/" + "քաշաճ.xlsx", (err) => {
     if (err) {
       writeInLogs(error)
       // console.log("Error: ",err);
@@ -36,7 +36,7 @@ router.post("/download", tokenVerify, async (req, res) => {
           });
           rowIndex++;
         });
-        workbook.xlsx.writeFile(__dirname + "/" + "new.xlsx");
+        workbook.xlsx.writeFile(__dirname + "/" + "քաշաճ.xlsx");
       })
       .then(() => {
         res.send({success: true});
