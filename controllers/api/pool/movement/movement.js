@@ -9,8 +9,8 @@ router.use(express.json());
 
 router.post('/movement', tokenVerify, async (req, res) => {
     try {
-        const { fromPoolid, toPoolid, quantity , weight , forSend, description } = req.body;
-        const result = await pool.query(pgFunctions.pool.movement.usp_fishMove, [fromPoolid, toPoolid, quantity , weight , forSend, description]);
+        const { fromPoolid, toPoolid, quantity , weight , description, date } = req.body;
+        const result = await pool.query(pgFunctions.pool.movement.usp_fishMove, [fromPoolid, toPoolid, quantity, weight, description, date]);
         res.send({success: result.rows[0].success, errorMessage: result.rows[0].errorMessage});
     }
     catch(err) {

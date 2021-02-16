@@ -38,7 +38,7 @@ router.post("/download", async (req, res) => {
         workbook.xlsx.writeFile(__dirname + "/" + "new.xlsx");
       })
       .then(() => {
-        res.send("ok");
+        res.send({success: true});
       })
       .catch((e) => {
         writeInLogs(e);
