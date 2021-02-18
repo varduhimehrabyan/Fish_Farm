@@ -15,6 +15,7 @@ module.exports = {
     },
     movement: {
       usp_fishMove: 'SELECT * FROM "usp_fishMove"($1, $2, $3, $4, $5, $6)',
+      usp_undoFishMove: 'SELECT * FROM "usp_undoFishMove"($1, $2)',
     },
     entrance: {
       usp_fishIn: 'SELECT * FROM "usp_fishIn"($1, $2, $3, $4, $5, $6)',

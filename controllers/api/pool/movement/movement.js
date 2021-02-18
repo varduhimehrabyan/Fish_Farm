@@ -19,4 +19,16 @@ router.post('/movement', tokenVerify, async (req, res) => {
     
 })
 
+router.post('/undoFishMove', tokenVerify, async (req, res) => {
+    try {
+    const { id, action } = req.body;
+    const result = await pool.query(pgFunctions.pool.movement.usp_undoFishMove, [id, action]);
+    res.send({success: result.rows[0].success, errorMessage: result.rows[0].errorMessage});
+    }
+    catch(err) {
+    writeInLogs(err)
+    }
+    
+    })
+
 module.exports = router;

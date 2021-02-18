@@ -4,15 +4,23 @@ const Excel = require("exceljs");
 let workbook = new Excel.Workbook();
 const writeInLogs = require("../../../services/writeInLogsFile");
 const tokenVerify = require("../../../middlewares/token/tokenVerify");
+const fs = require("fs")
+
+let id = 0
 
 router.use(express.json());
 
-router.get("/download", tokenVerify, (req, res) => {
-  res.download(__dirname + "/" + "քաշաճ.xlsx", (err) => {
+router.get("/download/:name", tokenVerify,  (req, res) => {
+  res.download(__dirname + "/" + req.params.name + ".xlsx",'report.xlsx', (err) => {
     if (err) {
       writeInLogs(err)
+      // console.log("Error: ",err);
     }
+	fs.unlinkSync(__dirname + "/" + req.params.name + ".xlsx")
   });
+//res.on("finish", () => {
+ //               fs.unlinkSync(__dirname + "/" + req.params.name + ".xlsx")
+//            })
 });
 
 router.post("/download", tokenVerify, async (req, res) => {
@@ -34,10 +42,12 @@ router.post("/download", tokenVerify, async (req, res) => {
           });
           rowIndex++;
         });
-        workbook.xlsx.writeFile(__dirname + "/" + "քաշաճ.xlsx");
+        return workbook.xlsx.writeFile(__dirname + "/" + id.toString() + ".xlsx");
       })
       .then(() => {
-        res.send({success: true});
+	fs.chmodSync(__dirname + "/" + id.toString() + ".xlsx",0777)
+        res.send({success: true, id: id.toString()})
+	id++
       })
       .catch((e) => {
         writeInLogs(e);
