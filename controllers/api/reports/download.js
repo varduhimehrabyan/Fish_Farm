@@ -4,15 +4,13 @@ const Excel = require("exceljs");
 let workbook = new Excel.Workbook();
 const writeInLogs = require("../../../services/writeInLogsFile");
 const tokenVerify = require("../../../middlewares/token/tokenVerify");
-const { error } = require("console");
 
 router.use(express.json());
 
 router.get("/download", tokenVerify, (req, res) => {
   res.download(__dirname + "/" + "քաշաճ.xlsx", (err) => {
     if (err) {
-      writeInLogs(error)
-      // console.log("Error: ",err);
+      writeInLogs(err)
     }
   });
 });

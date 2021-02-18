@@ -4,7 +4,6 @@ function writeInLogs(message) {
   try {
     fs.open("../logs.txt", "a", (err, fd) => {
       if (err) {
-        // console.log('Cant open file');
       } else {
         const date = new Date();
         const time = date.getTime();
@@ -22,10 +21,8 @@ function writeInLogs(message) {
 
         const errorText = `${month}/${day}/${year}  ${hour}:${minute} \n  ${message} \n\n`;
 
-        //console.log(errorText);
 
         fs.appendFile("./logs.txt", errorText, function (err) {
-          // if (err) console.log(err);
         });
       }
     });

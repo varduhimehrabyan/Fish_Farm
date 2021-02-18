@@ -26,11 +26,9 @@ router.post("/login", async (req, res) => {
           result.rows[0].password
         );
         if (!correctPassword) {
-          // console.log('Incorrect password!')
           res.send({ success: false });
         } else {
           createToken(res, mail, result.rows[0].id, result.rows[0].typeId);
-          // console.log('User logged in!');
           res.send({
             success: result.rows[0].success,
             errorMessage: result.rows[0].errorMessage,
@@ -39,7 +37,7 @@ router.post("/login", async (req, res) => {
         }
       }
     } else {
-      // console.log({success: false});
+      writeInLogs("Mail or password is not exist");
     }
   } catch (err) {
     writeInLogs(err);

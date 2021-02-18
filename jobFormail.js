@@ -14,11 +14,6 @@ module.exports = () => {
         .query(pgFunctions.report.usp_storeReport)
         .then(sendMail("varduhimehrabyan99@gmail.com"))
         .catch((err) => writeInLogs(err));
-      // console.log("Schedule running!");
-
-      // if(shell.exec('dir') !== 0) {
-      //     console.log('Something went wrong');
-      // }
     } catch (err) {
       writeInLogs(err);
     }

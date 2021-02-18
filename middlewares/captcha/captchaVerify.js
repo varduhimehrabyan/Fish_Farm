@@ -3,7 +3,6 @@ const writeInLogs = require('../../services/writeInLogsFile');
 
 const secretKey = global.env.captcha_secret_key
 
-// console.log(secretKey);
 
 const captcha = (req, res, next) => {
 

@@ -79,19 +79,14 @@ router.get("/getCoefficient", async (req, res) => {
 });
 
 router.post("/updateWeight", tokenVerify, async (req, res) => {
-  // console.log("object");
   try {
-    // console.log(req.body);
-    // console.log("object1");
     const { id, weight, description, partnerid } = req.body;
-    // console.log(parseInt(weight));
     const result = await pool.query(pgFunctions.food.usp_updateTheFood, [
       id,
       parseInt(weight),
       description,
       parseInt(partnerid),
     ]);
-    // console.log(result, "result");
 
     res.status(200).send({
       success: result.rows[0].success,
@@ -105,7 +100,6 @@ router.post("/updateWeight", tokenVerify, async (req, res) => {
 router.post("/foodHistory", tokenVerify, async (req, res) => {
   try {
     const { id } = req.body;
-    // console.log(id, "id");
     const result = await pool.query(
       pgFunctions.feedHistory.usp_poolReportFood,
       [id]
@@ -121,12 +115,10 @@ router.post("/foodHistory", tokenVerify, async (req, res) => {
 router.post("/moveHistory", tokenVerify, async (req, res) => {
   try {
     const { id } = req.body;
-    // console.log(id, "id");
     const result = await pool.query(
       pgFunctions.feedHistory.usp_poolReportFish,
       [id]
     );
-    // console.log(result.rows, "result move")
     res.status(200).send({
       fields: result.rows,
     });

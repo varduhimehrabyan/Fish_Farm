@@ -13,18 +13,15 @@ router.use(cookieParser());
 router.get('/token', async (req, res) => {
     try {
         if (req.headers.cookie) {
-            // console.log(req.cookies);
+            // .log(req.cookies);
             let currentToken = req.cookies.token
             jwt.verify(currentToken, secret, function (err, decoded) {
                 if (err) {
                     res.send({ success: false, msg: 'Token is not verified!' })
                 } else {
-                    // console.log('Token verified!');
                     decoded = jwt_decode(currentToken);
                     res.send({
                         success: true
-                        // id: decoded.id, 
-                        // typeId: decoded.typeId
                     })
                 }
             })

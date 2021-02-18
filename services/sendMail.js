@@ -31,7 +31,7 @@ const sendMail = async (mail) => {
       },
       (err) => {
         if (err) {
-          // console.log(err);
+          writeInLogs("error to send mail")
         } else {
           res.send("Mail sent!");
         }
