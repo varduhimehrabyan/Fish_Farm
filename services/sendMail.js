@@ -1,7 +1,7 @@
 // const express = require('express');
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
-const writeInLogs = require("../services/writeInLogsFile");
+const writeInLogs = require("./writeInLogsFile");
 
 const router = express();
 

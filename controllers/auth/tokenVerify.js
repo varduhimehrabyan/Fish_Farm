@@ -1,19 +1,27 @@
+// const express = require('express');
+const router = express();
+const cookieParser = require('cookie-parser');
+const writeInLogs = require('../../services/writeInLogsFile');
 const jwt = require('jsonwebtoken');
 const jwt_decode = require('jwt-decode');
-const secret = global.env.secret;
-const writeInLogs = require('../../services/writeInLogsFile')
+const secret = global.env.secret
 
+router.use(express.json());
+router.use(cookieParser());
 
-const tokenVerify = async (req, res, next) => {
+router.get('/token', async (req, res) => {
     try {
         if (req.headers.cookie) {
+            // .log(req.cookies);
             let currentToken = req.cookies.token
             jwt.verify(currentToken, secret, function (err, decoded) {
                 if (err) {
                     res.send({ success: false, msg: 'Token is not verified!' })
                 } else {
                     decoded = jwt_decode(currentToken);
-                    next()
+                    res.send({
+                        success: true
+                    })
                 }
             })
         
@@ -22,9 +30,9 @@ const tokenVerify = async (req, res, next) => {
         }
     } catch (err) {
         writeInLogs(err)
-        res.json(err)
+        res.json('err')
     }
-}
+})
 
 
-module.exports = tokenVerify
+module.exports = router;

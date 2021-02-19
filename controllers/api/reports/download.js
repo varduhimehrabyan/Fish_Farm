@@ -3,7 +3,7 @@ const router = express();
 const Excel = require("exceljs");
 let workbook = new Excel.Workbook();
 const writeInLogs = require("../../../services/writeInLogsFile");
-const tokenVerify = require("../../../middlewares/token/tokenVerify");
+const tokenVerify = require("../../../middlewares/tokenVerify");
 const fs = require("fs")
 
 let id = 0

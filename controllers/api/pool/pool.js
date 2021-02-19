@@ -3,7 +3,7 @@ const router = express();
 const pool = require('../../../database/db');
 const pgFunctions = require('../../../pgFunctions');
 const writeInLogs = require('../../../services/writeInLogsFile');
-const tokenVerify = require('../../../middlewares/token/tokenVerify');
+const tokenVerify = require('../../../middlewares/tokenVerify');
 
 router.use(express.json());
 
@@ -80,6 +80,55 @@ router.post('/correct', tokenVerify, async (req, res) => {
     }
     catch(err)  {
         writeInLogs(err);
+    }
+    
+})
+
+router.post('/inPool', tokenVerify, async (req, res) => {
+    try {
+        const { toPoolid, quantity, weight, partnerId, description, date } = req.body;
+        const result = await pool.query(pgFunctions.pool.entrance.usp_fishIn, [toPoolid, quantity, weight, partnerId, description, date])
+            res.send({success: result.rows[0].success, errorMessage: result.rows[0].errorMessage});
+        
+    }
+    catch(err) {
+        writeInLogs(err)
+    }
+    
+})
+
+router.post('/movement', tokenVerify, async (req, res) => {
+    try {
+        const { fromPoolid, toPoolid, quantity , weight , description, date } = req.body;
+        const result = await pool.query(pgFunctions.pool.movement.usp_fishMove, [fromPoolid, toPoolid, quantity, weight, description, date]);
+        res.send({success: result.rows[0].success, errorMessage: result.rows[0].errorMessage});
+    }
+    catch(err) {
+        writeInLogs(err)
+    }
+    
+})
+
+router.post('/undoFishMove', tokenVerify, async (req, res) => {
+    try {
+    const { id, action } = req.body;
+    const result = await pool.query(pgFunctions.pool.movement.usp_undoFishMove, [id, action]);
+    res.send({success: result.rows[0].success, errorMessage: result.rows[0].errorMessage});
+    }
+    catch(err) {
+    writeInLogs(err)
+    }
+    
+})
+
+router.post('/sales', tokenVerify, async (req, res) => {
+    try {
+        const { fromPoolid, quantity, weight, partnerId, description, date } = req.body;
+        const result = await pool.query(pgFunctions.pool.sale.usp_fishOut, [fromPoolid, quantity, weight, partnerId, description, date]);
+        res.send({success: result.rows[0].success, errorMessage: result.rows[0].errorMessage});
+    }
+    catch(err) {
+        writeInLogs(err)
     }
     
 })

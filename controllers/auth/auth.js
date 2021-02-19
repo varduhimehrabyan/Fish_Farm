@@ -1,13 +1,17 @@
 // const express = require('express');
 const router = express();
 const bcrypt = require("bcrypt");
-const pool = require("../../../database/db");
-const createToken = require("../token/createToken");
-const pgFunctions = require("../../../pgFunctions");
-const writeInLogs = require("../../../services/writeInLogsFile");
+const pool = require("../../database/db");
+const createToken = require("./createToken");
+const pgFunctions = require("../../pgFunctions");
+const writeInLogs = require("../../services/writeInLogsFile");
+const cookieParser = require("cookie-parser");
+const tokenVerify = require('../../middlewares/tokenVerify')
+
 // const captchaVerify = require('../../../middlewares/captcha/captchaVerify')
 
 router.use(express.json());
+router.use(cookieParser());
 
 router.post("/login", async (req, res) => {
   try {
@@ -44,5 +48,23 @@ router.post("/login", async (req, res) => {
     res.send({ success: false });
   }
 });
+
+router.get("/logout", tokenVerify, async (req, res) => {
+    try {
+      // res.clearCookie("token");
+      const cookie = req.cookies;
+      for (let i in cookie) {
+        if (!cookie.hasOwnProperty(i)) {
+          res.send({ success: false });
+        } else {
+          res.clearCookie("token");
+          res.send({ success: true });
+        }
+      }
+    } catch (err) {
+      writeInLogs(err.message);
+      res.send({ success: false });
+    }
+  });
 
 module.exports = router;
