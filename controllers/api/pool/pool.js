@@ -74,9 +74,10 @@ router.post('/updatePool', tokenVerify, async (req, res) => {
 
 router.post('/correct', tokenVerify, async (req, res) => {
     try {
-        const { poolid , quantity , weight  } = req.body;
+        const { quantity , weight  } = req.body;
+        const poolid = req.body.id
         const added = await pool.query(pgFunctions.pool.usp_correct, [poolid , quantity , weight])
-            res.status(200).send({ success: added.rows[0].success, errorMessage: added.rows[0].errorMessage,id: added.rows[0].id})
+            res.status(200).send({ success: added.rows[0].success })
     }
     catch(err)  {
         writeInLogs(err);
