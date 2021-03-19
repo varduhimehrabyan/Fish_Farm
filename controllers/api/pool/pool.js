@@ -19,6 +19,21 @@ router.get('/getPools', tokenVerify, async (req, res) => {
     }
 })
 
+router.get('/getPoolsForFilter', tokenVerify, async (req, res) => {
+    try {
+        let arr = [];
+        const allPools = await pool.query(pgFunctions.pool.usp_getPools);
+        for(i = 0; i < allPools.rows.length; i++) {
+            arr.push({value: allPools.rows[i].id, label: allPools.rows[i].name})
+        }
+        res.status(200).send({
+            allPools: arr
+        })
+    }
+    catch(err)  {
+        writeInLogs(err);
+    }
+})
 
 router.get('/getPoolsAndDetails', tokenVerify, async (req, res) => {
     try {

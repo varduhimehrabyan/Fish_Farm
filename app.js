@@ -14,6 +14,6 @@ app.use("/reports", require("./controllers/api/reports"));
 app.use("/feeding", require("./controllers/api/feedingAndLosses"));
 app.use("/losses", require("./controllers/api/feedingAndLosses"));
 
-app.use('/', require('./fishFarm'));
+// app.use('/', require('./fishFarm'));
 
 app.listen(5000);
