@@ -21,14 +21,11 @@ router.post("/getCurrentReports", tokenVerify, async (req, res) => {
 router.post("/filterReports", tokenVerify, async (req, res) => {
   try {
     const {startDate, endDate, send} = req.body
-    console.log(req.body);
     let arr = [];
     for(i = 0; i < send.length; i++) {
       arr.push(send[i].value)
     }
-    console.log("arr: ", arr);
-    const data = await pool.query(pgFunctions.report.usp_filterForReport, [arr, startDate, endDate]);  
-    console.log("data:", data.rows);
+    const data = await pool.query(pgFunctions.report.usp_filterForReport, [arr, startDate, endDate]);
     res.send({
       data: data.rows,
     });
