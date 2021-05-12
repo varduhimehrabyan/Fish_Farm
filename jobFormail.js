@@ -13,7 +13,6 @@ module.exports = () => {
       exec('pg_dump -h 127.0.0.1 -U dzukuser  -Fc Dzuk > /data/backup/Dzuk.backup', (err, stdout, stderr) => {
         if (err) {
             // node couldn't execute the command
-            console.log('error');
             return;
         }
         sendMail('argishtibejanyan@gmail.com');

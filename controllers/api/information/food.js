@@ -1,9 +1,9 @@
 // const express = require('express');
 const router = express();
-const pool = require('../../../database/db');
-const pgFunctions = require('../../../pgFunctions');
-const writeInLogs = require('../../../services/writeInLogsFile');
-const tokenVerify = require('../../../middlewares/tokenVerify');
+const pool = require("../../../database/db");
+const pgFunctions = require("../../../pgFunctions");
+const writeInLogs = require("../../../services/writeInLogsFile");
+const tokenVerify = require("../../../middlewares/tokenVerify");
 
 router.use(express.json());
 
@@ -12,6 +12,21 @@ router.get("/getFoods", tokenVerify, async (req, res) => {
     const allFoods = await pool.query(pgFunctions.food.usp_getFoods);
     res.status(200).send({
       allFoods: allFoods.rows,
+    });
+  } catch (err) {
+    writeInLogs(err);
+  }
+});
+
+router.get("/getFoodWeights", tokenVerify, async (req, res) => {
+  try {
+    let sum = 0;
+    const allFoods = await pool.query(pgFunctions.food.usp_getFoods);
+    for (let i = 0; i < allFoods.rows.length; i++) {
+      sum += parseFloat(allFoods.rows[i].weight);
+    }
+    res.status(200).send({
+      count: sum,
     });
   } catch (err) {
     writeInLogs(err);

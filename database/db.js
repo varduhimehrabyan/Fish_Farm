@@ -1,8 +1,8 @@
 const {Pool} = require('pg');
 require('dotenv').config()
-// global.env = process.env
-const secureEnv = require('secure-env');
-global.env = secureEnv({secret:'Zh-43VTW4fGVZK6fW4Ls'});
+global.env = process.env
+// const secureEnv = require('secure-env');
+// global.env = secureEnv({secret:'Zh-43VTW4fGVZK6fW4Ls'});
 
 const pool = new Pool({
   user: global.env.user,

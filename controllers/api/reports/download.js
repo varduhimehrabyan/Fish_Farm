@@ -14,7 +14,6 @@ router.get("/download/:name", tokenVerify,  (req, res) => {
   res.download(__dirname + "/" + req.params.name + ".xlsx",'report.xlsx', (err) => {
     if (err) {
       writeInLogs(err)
-      // console.log("Error: ",err);
     }
 	fs.unlinkSync(__dirname + "/" + req.params.name + ".xlsx")
   });
