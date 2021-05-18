@@ -72,6 +72,7 @@ router.post("/updateFood", tokenVerify, async (req, res) => {
       name,
       number,
       weight,
+      // date
     ]);
     res.status(200).send({
       success: result.rows[0].success,
@@ -82,7 +83,7 @@ router.post("/updateFood", tokenVerify, async (req, res) => {
   }
 });
 
-router.get("/getCoefficient", async (req, res) => {
+router.get("/getCoefficient", tokenVerify, async (req, res) => {
   try {
     const allCoef = await pool.query(pgFunctions.food.usp_getCoefficient);
     res.status(200).send({
@@ -95,12 +96,13 @@ router.get("/getCoefficient", async (req, res) => {
 
 router.post("/updateWeight", tokenVerify, async (req, res) => {
   try {
-    const { id, weight, description, partnerid } = req.body;
+    const { id, weight, description, partnerid, date } = req.body;
     const result = await pool.query(pgFunctions.food.usp_updateTheFood, [
       id,
       parseInt(weight),
       description,
       parseInt(partnerid),
+      date,
     ]);
 
     res.status(200).send({

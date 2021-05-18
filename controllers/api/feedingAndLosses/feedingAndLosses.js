@@ -7,7 +7,7 @@ const tokenVerify = require("../../../middlewares/tokenVerify");
 
 router.use(express.json());
 
-router.post("/addFeed", tokenVerify, async (req, res) => {
+router.post("/addFeed",tokenVerify, async (req, res) => {
   try {
     const { addFood } = req.body;
     const added = await pool.query(pgFunctions.feeding.usp_feed, [addFood]);
