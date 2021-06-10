@@ -1,54 +1,258 @@
-05/18/2021  10:08 
+06/7/2021  15:38 
+  error: numeric field overflow 
+
+06/7/2021  16:10 
+  Error: read ECONNRESET 
+
+06/7/2021  16:10 
+  Error: connect ETIMEDOUT 192.168.88.32:5432 
+
+06/7/2021  16:11 
+  Error: connect ETIMEDOUT 192.168.88.32:5432 
+
+06/7/2021  16:11 
+  Error: connect ETIMEDOUT 192.168.88.32:5432 
+
+06/7/2021  16:18 
+  error: the database system is starting up 
+
+06/7/2021  16:18 
+  error: the database system is starting up 
+
+06/7/2021  16:20 
+  error: the database system is starting up 
+
+06/7/2021  16:20 
+  error: the database system is starting up 
+
+06/7/2021  16:21 
+  Error: read ECONNRESET 
+
+06/7/2021  16:22 
+  error: the database system is starting up 
+
+06/7/2021  16:42 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:15 
+06/7/2021  16:46 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:15 
+06/7/2021  16:46 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:16 
+06/7/2021  16:47 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:16 
+06/7/2021  16:48 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:17 
+06/7/2021  16:48 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:17 
+06/7/2021  16:48 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:18 
+06/7/2021  16:52 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:19 
+06/7/2021  16:53 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:20 
+06/7/2021  16:56 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:20 
+06/7/2021  17:04 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:20 
+06/7/2021  17:31 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:22 
+06/7/2021  17:40 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:23 
+06/7/2021  17:48 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:23 
+06/10/2021  10:03 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:53 
+06/10/2021  10:24 
   error: invalid input syntax for type date: "" 
 
-05/18/2021  10:53 
-  error: function usp_updateTheFood(unknown, unknown, unknown, unknown) does not exist 
+06/10/2021  10:25 
+  error: invalid input syntax for type date: "" 
 
-05/18/2021  10:53 
-  error: function usp_updateTheFood(unknown, unknown, unknown, unknown) does not exist 
+06/10/2021  10:25 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  10:27 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  10:29 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  10:31 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  10:32 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  10:38 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  10:39 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  11:04 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  11:47 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  11:52 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  11:53 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  11:54 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  11:56 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  11:56 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  11:59 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  13:24 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  13:44 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  13:49 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  13:53 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  13:54 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  13:57 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:02 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:07 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:07 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:08 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:08 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:09 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:11 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:11 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:18 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:18 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:19 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:22 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:23 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:43 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:46 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:47 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:49 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:50 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:51 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:54 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:57 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:58 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  14:59 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:06 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:09 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:11 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:25 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:28 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:28 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:36 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:41 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:54 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:57 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:58 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  15:59 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  16:11 
+  error: invalid input syntax for type date: "" 
+
+06/10/2021  16:13 
+  error: invalid input syntax for type date: "" 
 
