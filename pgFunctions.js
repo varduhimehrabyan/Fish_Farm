@@ -35,6 +35,10 @@ module.exports = {
     usp_getCoefficient: 'SELECT * FROM "usp_getCoefficient"()',
     usp_updateTheFood: 'SELECT * FROM "usp_updateTheFood"($1, $2, $3, $4, $5)',
   },
+  fishMoveHistory: {
+    usp_fishMoveHistory:
+      'SELECT * FROM "usp_fishMoveHistory"($1, $2, $3, $4, $5)',
+  },
   partner: {
     usp_getPartners: 'SELECT * FROM "usp_getPartners"()',
     usp_addPartner: 'SELECT * FROM "usp_addPartner"($1, $2, $3)',
@@ -45,14 +49,14 @@ module.exports = {
     usp_createReport: 'SELECT * FROM "usp_createReport"()',
     usp_getReportForMonth: 'SELECT * FROM "usp_getReportForMonth"($1, $2)',
     usp_saveReport: 'SELECT * FROM "usp_saveReport"($1)',
-    usp_filterForReport: 'SELECT * FROM "usp_filterForReport"($1, $2, $3)'
+    usp_filterForReport: 'SELECT * FROM "usp_filterForReport"($1, $2, $3)',
   },
   feeding: {
     usp_feed: 'SELECT * FROM "usp_feed"($1)',
   },
   feedHistory: {
     usp_poolReportFood: 'SELECT * FROM "usp_poolReportFood"($1)',
-    usp_poolReportFish:'SELECT * FROM "usp_poolReportFish"($1)'
+    usp_poolReportFish: 'SELECT * FROM "usp_poolReportFish"($1)',
   },
   losses: {
     usp_loss: 'SELECT * FROM "usp_loss"($1)',
