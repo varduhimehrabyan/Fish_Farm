@@ -1,0 +1,6 @@
+06/22/2021  9:46 
+  error: invalid input syntax for type date: "" 
+
+06/22/2021  9:46 
+  error: invalid input syntax for type date: "" 
+

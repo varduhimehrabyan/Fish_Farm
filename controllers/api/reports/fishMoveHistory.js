@@ -9,6 +9,7 @@ router.use(express.json());
 router.post("/fishMoveHistory", async (req, res) => {
   const { poolsForFilter, typesForFilter, startDate, endDate, currentPage } =
     req.body;
+    let count = 0
   console.log("LINA", {
     poolsForFilter,
     typesForFilter,
@@ -21,9 +22,13 @@ router.post("/fishMoveHistory", async (req, res) => {
       pgFunctions.fishMoveHistory.usp_fishMoveHistory,
       [poolsForFilter, typesForFilter, startDate, endDate, currentPage - 1]
     );
-    console.log("data: ", data.rows);
+    console.log({
+      data: data.rows,
+      count: data.rows.length === 0?0:data.rows[0].count,
+    });
     res.send({
       data: data.rows,
+      count: data.rows.length === 0?0:data.rows[0].count,
     });
   } catch (err) {
     writeInLogs(err);
