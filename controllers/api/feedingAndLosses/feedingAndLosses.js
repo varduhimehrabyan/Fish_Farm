@@ -7,7 +7,7 @@ const tokenVerify = require("../../../middlewares/tokenVerify");
 
 router.use(express.json());
 
-router.post("/addFeed",tokenVerify, async (req, res) => {
+router.post("/addFeed", tokenVerify, async (req, res) => {
   try {
     const { addFood } = req.body;
     // console.log("addFood: ", addFood);
@@ -24,18 +24,18 @@ router.post("/addFeed",tokenVerify, async (req, res) => {
 });
 
 router.post("/addLosse", tokenVerify, async (req, res) => {
-    try {
-      const { addLosses } = req.body;
-      console.log(addLosses);
-      const added = await pool.query(pgFunctions.losses.usp_loss, [addLosses]);
-      res.status(200).send({
-        success: added.rows[0].success,
-        errorMessage: added.rows[0].errorMessage,
-        id: added.rows[0].id,
-      });
-    } catch (err) {
-      writeInLogs(err);
-    }
-  });
+  try {
+    const { addLosses } = req.body;
+    // console.log(addLosses);
+    const added = await pool.query(pgFunctions.losses.usp_loss, [addLosses]);
+    res.status(200).send({
+      success: added.rows[0].success,
+      errorMessage: added.rows[0].errorMessage,
+      id: added.rows[0].id,
+    });
+  } catch (err) {
+    writeInLogs(err);
+  }
+});
 
 module.exports = router;

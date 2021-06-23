@@ -38,6 +38,7 @@ module.exports = {
   fishMoveHistory: {
     usp_fishMoveHistory:
       'SELECT * FROM "usp_fishMoveHistory"($1, $2, $3, $4, $5)',
+    usp_editMove: 'SELECT * FROM "usp_editMove"($1, $2, $3, $4, $5, $6)',
   },
   partner: {
     usp_getPartners: 'SELECT * FROM "usp_getPartners"()',
