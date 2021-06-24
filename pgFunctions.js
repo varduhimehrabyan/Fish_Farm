@@ -38,7 +38,12 @@ module.exports = {
   fishMoveHistory: {
     usp_fishMoveHistory:
       'SELECT * FROM "usp_fishMoveHistory"($1, $2, $3, $4, $5)',
-    usp_editMove: 'SELECT * FROM "usp_editMove"($1, $2, $3, $4, $5, $6)',
+    usp_editFishMove:
+      'SELECT * FROM "usp_editFishMove"($1, $2, $3, $4, $5, $6)',
+    usp_foodMoveHistory:
+      'SELECT * FROM "usp_foodMoveHistory"($1, $2, $3, $4, $5)',
+    usp_undoFeeding: 'SELECT * FROM "usp_undoFeeding"($1)',
+    usp_editFoodMove: 'SELECT * FROM "usp_editFoodMove"($1, $2, $3, $4)',
   },
   partner: {
     usp_getPartners: 'SELECT * FROM "usp_getPartners"()',

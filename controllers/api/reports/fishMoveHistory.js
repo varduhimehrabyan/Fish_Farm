@@ -38,14 +38,62 @@ router.post("/updateMove", async (req, res) => {
   try {
     const { id, type, quantity, weight, partnerId, description } = req.body;
     // console.log({ id, type, quantity, weight, partnerId, description });
-    const result = await pool.query(pgFunctions.fishMoveHistory.usp_editMove, [
-      id,
-      type,
-      quantity,
-      weight,
-      partnerId,
-      description,
-    ]);
+    const result = await pool.query(
+      pgFunctions.fishMoveHistory.usp_editFishMove,
+      [id, type, quantity, weight, partnerId, description]
+    );
+    res.send({
+      success: result.rows[0].success,
+      errorMessage: result.rows[0].errorMessage,
+    });
+  } catch (err) {
+    writeInLogs(err);
+  }
+});
+
+router.post("/feedHistory", async (req, res) => {
+  try {
+    const { poolsForFilter, foodsForFilter, startDate, endDate, currentPage } =
+      req.body;
+    const result = await pool.query(
+      pgFunctions.fishMoveHistory.usp_foodMoveHistory,
+      [poolsForFilter, foodsForFilter, startDate, endDate, currentPage - 1]
+    );
+
+    res.send({
+      result: result.rows,
+      count: result.rows.length === 0 ? 0 : result.rows[0].count,
+    });
+  } catch (err) {
+    writeInLogs(err);
+  }
+});
+
+router.post("/undoFeeding", async (req, res) => {
+  try {
+    const { id } = req.body;
+    const result = await pool.query(
+      pgFunctions.fishMoveHistory.usp_undoFeeding,
+      [id]
+    );
+
+    res.send({
+      success: result.rows[0].success,
+      errorMessage: result.rows[0].errorMessage,
+    });
+  } catch (err) {
+    writeInLogs(err);
+  }
+});
+
+router.post("/editFeeding", async (req, res) => {
+  try {
+    const { id, foodId, weight, coef } = req.body;
+    const result = await pool.query(
+      pgFunctions.fishMoveHistory.usp_editFoodMove,
+      [id, foodId, weight, coef]
+    );
+
     res.send({
       success: result.rows[0].success,
       errorMessage: result.rows[0].errorMessage,

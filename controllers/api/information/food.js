@@ -18,6 +18,24 @@ router.get("/getFoods", tokenVerify, async (req, res) => {
   }
 });
 
+router.get("/getFoodsDetails", async (req, res) => {
+  try {
+    let foods = [];
+    const allFoods = await pool.query(pgFunctions.food.usp_getFoods);
+    for (let i = 0; i < allFoods.rows.length; i++) {
+      foods.push({
+        value: allFoods.rows[i].id,
+        label: `${allFoods.rows[i].name} ${allFoods.rows[i].number}`,
+      });
+    }
+    res.send({
+      foodsDetails: foods,
+    });
+  } catch (err) {
+    writeInLogs(err);
+  }
+});
+
 router.get("/getFoodWeights", tokenVerify, async (req, res) => {
   try {
     let sum = 0;
