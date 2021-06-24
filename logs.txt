@@ -1,0 +1,33 @@
+06/24/2021  11:15 
+  error: invalid input syntax for type date: "" 
+
+06/24/2021  11:15 
+  error: invalid input syntax for type date: "" 
+
+06/24/2021  11:16 
+  error: invalid input syntax for type date: "" 
+
+06/24/2021  11:16 
+  error: invalid input syntax for type date: "" 
+
+06/24/2021  11:16 
+  error: invalid input syntax for type date: "" 
+
+06/24/2021  11:17 
+  error: invalid input syntax for type date: "" 
+
+06/24/2021  11:17 
+  error: invalid input syntax for type date: "" 
+
+06/24/2021  11:17 
+  error: invalid input syntax for type date: "" 
+
+06/24/2021  11:17 
+  error: invalid input syntax for type date: "" 
+
+06/24/2021  11:17 
+  error: invalid input syntax for type date: "" 
+
+06/24/2021  11:17 
+  error: invalid input syntax for type date: "" 
+

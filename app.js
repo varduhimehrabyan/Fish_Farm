@@ -2,10 +2,10 @@ global.express = require("express");
 const cors = require("cors");
 const app = express();
 const cookieParser = require("cookie-parser");
-const bak = require('./jobFormail')
- 
-bak()
- 
+const bak = require("./jobFormail");
+
+bak();
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
@@ -16,6 +16,6 @@ app.use("/reports", require("./controllers/api/reports"));
 app.use("/feeding", require("./controllers/api/feedingAndLosses"));
 app.use("/losses", require("./controllers/api/feedingAndLosses"));
 
-// app.use('/', require('./fishFarm'));
+app.use("/", require("./fishFarm"));
 
-app.listen(5001);
+app.listen(5000);

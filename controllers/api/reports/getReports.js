@@ -1,9 +1,9 @@
 // const express = require('express');
 const router = express();
-const pool = require('../../../database/db');
-const pgFunctions = require('../../../pgFunctions');
-const writeInLogs = require('../../../services/writeInLogsFile');
-const tokenVerify = require('../../../middlewares/tokenVerify');
+const pool = require("../../../database/db");
+const pgFunctions = require("../../../pgFunctions");
+const writeInLogs = require("../../../services/writeInLogsFile");
+const tokenVerify = require("../../../middlewares/tokenVerify");
 
 router.use(express.json());
 
@@ -20,12 +20,16 @@ router.post("/getCurrentReports", tokenVerify, async (req, res) => {
 
 router.post("/filterReports", tokenVerify, async (req, res) => {
   try {
-    const {startDate, endDate, send} = req.body
+    const { startDate, endDate, send } = req.body;
     let arr = [];
-    for(i = 0; i < send.length; i++) {
-      arr.push(send[i].value)
+    for (i = 0; i < send.length; i++) {
+      arr.push(send[i].value);
     }
-    const data = await pool.query(pgFunctions.report.usp_filterForReport, [arr, startDate, endDate]);
+    const data = await pool.query(pgFunctions.report.usp_filterForReport, [
+      arr,
+      startDate,
+      endDate,
+    ]);
     res.send({
       data: data.rows,
     });
