@@ -80,11 +80,11 @@ router.post("/moveHistory", tokenVerify, async (req, res) => {
   }
 });
 
-router.post("/usefulFishes", async (req, res) => {
+router.post("/usefulFishes", tokenVerify, async (req, res) => {
   try {
-    const { page } = req.body;
+    const { currentPage } = req.body;
     const usefulFishes = await pool.query(pgFunctions.fish.usp_usefulFishes, [
-      page - 1,
+      currentPage - 1,
     ]);
     res.send({
       usefulFishes: usefulFishes.rows,

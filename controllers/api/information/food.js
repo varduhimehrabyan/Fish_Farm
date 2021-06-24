@@ -18,7 +18,7 @@ router.get("/getFoods", tokenVerify, async (req, res) => {
   }
 });
 
-router.get("/getFoodsDetails", async (req, res) => {
+router.get("/getFoodsDetails", tokenVerify, async (req, res) => {
   try {
     let foods = [];
     const allFoods = await pool.query(pgFunctions.food.usp_getFoods);

@@ -6,7 +6,7 @@ const tokenVerify = require("../../../middlewares/tokenVerify");
 
 router.use(express.json());
 
-router.post("/fishMoveHistory", async (req, res) => {
+router.post("/fishMoveHistory", tokenVerify, async (req, res) => {
   const { poolsForFilter, typesForFilter, startDate, endDate, currentPage } =
     req.body;
   // console.log("LINA", {
@@ -34,7 +34,7 @@ router.post("/fishMoveHistory", async (req, res) => {
   }
 });
 
-router.post("/updateMove", async (req, res) => {
+router.post("/updateMove", tokenVerify, async (req, res) => {
   try {
     const { id, type, quantity, weight, partnerId, description } = req.body;
     // console.log({ id, type, quantity, weight, partnerId, description });
@@ -51,7 +51,7 @@ router.post("/updateMove", async (req, res) => {
   }
 });
 
-router.post("/feedHistory", async (req, res) => {
+router.post("/feedHistory", tokenVerify, async (req, res) => {
   try {
     const { poolsForFilter, foodsForFilter, startDate, endDate, currentPage } =
       req.body;
@@ -69,7 +69,7 @@ router.post("/feedHistory", async (req, res) => {
   }
 });
 
-router.post("/undoFeeding", async (req, res) => {
+router.post("/undoFeeding", tokenVerify, async (req, res) => {
   try {
     const { id } = req.body;
     const result = await pool.query(
@@ -86,7 +86,7 @@ router.post("/undoFeeding", async (req, res) => {
   }
 });
 
-router.post("/editFeeding", async (req, res) => {
+router.post("/editFeeding", tokenVerify, async (req, res) => {
   try {
     const { id, foodId, weight, coef } = req.body;
     const result = await pool.query(
