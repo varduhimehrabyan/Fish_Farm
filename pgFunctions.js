@@ -26,6 +26,7 @@ module.exports = {
     usp_addFish: 'SELECT * FROM "usp_addFish"($1, $2)',
     usp_deleteFish: 'SELECT * FROM "usp_deleteFish"($1)',
     usp_updateFish: 'SELECT * FROM "usp_updateFish"($1, $2, $3)',
+    usp_usefulFishes: 'SELECT * FROM "usp_usefulFishes"($1)',
   },
   food: {
     usp_getFoods: 'SELECT * FROM "usp_getFoods"()',
